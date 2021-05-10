@@ -15,6 +15,23 @@ const cambiaFase = (destino) =>{
 };
 
 const chooseFighter = (fighter) => {
-    team1.push(allPlayers[fighter]);
-    console.log(team1);
-}
+    
+    if (team2.length<2){
+
+        if(team1.length <2){
+        team1.push(allPlayers[fighter]);
+        } else {
+        team2.push(allPlayers[fighter]); 
+        }
+
+        document.getElementById(fighter).onclick = "";
+        document.getElementById(fighter).className = "seleccionado";
+        console.log(team1);
+
+    } else {
+
+        console.log("este team 1", team1);
+        console.log("este team 2", team2);
+        cambiaFase("fase3");
+    }
+};

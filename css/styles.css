@@ -1,0 +1,33 @@
+*{
+    margin: 0em;
+    padding: 0em;
+}
+.secvis {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.textoBasico{
+    color: white;
+}
+
+.luchadores{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.picFighter{
+    width: 12em;
+    height: 12em;
+    border: solid 0.5em white;
+    margin: 1em;
+    transition: 0.5s;
+}
+
+.picFighter:hover{
+    border: solid 0.5em yellow;
+    transition: 0.5s;
+}

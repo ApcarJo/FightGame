@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FightGame</title>
+
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+    <section class="secvis" id="fase1">
+        <p class="textoBasico" onclick="cambiaFase('fase2')">PRESS START BUTON</p>
+    </section>
+    <section class="secvis" id="fase2" style="display:none">
+    
+        <div class="luchadores">
+            <div class="avatar" id="1" onclick="chooseFighter(1)"><img class="picFighter" src="img/avatar1.jfif"></div>
+            <div class="avatar" id="2" onclick="chooseFighter(2)"><img class="picFighter" src="img/avatar2.jfif"></div>
+            <div class="avatar" id="3" onclick="chooseFighter(3)"><img class="picFighter" src="img/avatar3.jfif"></div>
+            <div class="avatar" id="4" onclick="chooseFighter(4)"><img class="picFighter" src="img/avatar4.jfif"></div>
+            <div class="avatar" id="5" onclick="chooseFighter(5)"><img class="picFighter" src="img/avatar5.jfif"></div>
+            <div class="avatar" id="6" onclick="chooseFighter(6)"><img class="picFighter" src="img/avatar6.jfif"></div>
+        </div>
+
+    </section>
+
+    <script src="/js/fighters.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

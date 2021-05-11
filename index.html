@@ -12,17 +12,17 @@
 
     <section class="secvis" id="fase1">
         <p class="textoBasico" onclick="cambiaFase('fase2')">PRESS START BUTON</p>
-        <a href="snake.html" class="textoBasico">Snake</a>
+        
     </section>
     <section class="secvis" id="fase2" style="display:none">
     
         <div class="luchadores">
-            <div class="avatar" id="1" onclick="chooseFighter(1)"><img class="picFighter" src="img/avatar1.jfif"></div>
-            <div class="avatar" id="2" onclick="chooseFighter(2)"><img class="picFighter" src="img/avatar2.jfif"></div>
-            <div class="avatar" id="3" onclick="chooseFighter(3)"><img class="picFighter" src="img/avatar3.jfif"></div>
-            <div class="avatar" id="4" onclick="chooseFighter(4)"><img class="picFighter" src="img/avatar4.jfif"></div>
-            <div class="avatar" id="5" onclick="chooseFighter(5)"><img class="picFighter" src="img/avatar5.jfif"></div>
-            <div class="avatar" id="6" onclick="chooseFighter(6)"><img class="picFighter" src="img/avatar6.jfif"></div>
+            <div class="avatar" id="1" onclick="chooseFighter(1)"><img class="picFighter" src="img/Neo.jfif"></div>
+            <div class="avatar" id="2" onclick="chooseFighter(2)"><img class="picFighter" src="img/Axel.jfif"></div>
+            <div class="avatar" id="3" onclick="chooseFighter(3)"><img class="picFighter" src="img/Donatello.jfif"></div>
+            <div class="avatar" id="4" onclick="chooseFighter(4)"><img class="picFighter" src="img/Goku.jfif"></div>
+            <div class="avatar" id="5" onclick="chooseFighter(5)"><img class="picFighter" src="img/Chuck Norris.jfif"></div>
+            <div class="avatar" id="6" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
         </div>
 
         
@@ -30,7 +30,21 @@
     </section>
 
     <section class="secvis" id="fase3" style="display:none">
-    <p class="textoBasico">ESTOY EN LA FASE 3!!!</p></section>
+    <p class="textoBasico">ESTOY EN LA FASE 3!!!</p>
+        <div class="maquetaEquipos" id="equipos"></div>
+    </section>
+    
+    <section class="secvis" id="fase4" style="display:none">
+        <p class="textoBasico">ESTOY EN LA FASE 4!!!</p>
+        <div><img onclick="fighting()" src="img/fight.png"></div>
+        <div class="maquetaEquipos" id="lucha"></div>
+    </section>
+
+    <section class="secvis" id="fase5" style="display:none">
+        <p class="textoBasico">ESTOY EN LA FASE 5!!!</p>
+            
+        <div class="maquetaEquipos" id="resultadoCombate"></div>
+    </section>
 
     <script src="/js/fighters.js"></script>
     <script src="/js/main.js"></script>

@@ -1,5 +1,7 @@
 let team1 = [];
 let team2 = [];
+let p1 = "";
+let p2 = "";
 
 const cambiaFase = (destino) =>{
     let arrFase = ["fase1", "fase2", "fase3", "fase4"];
@@ -19,12 +21,16 @@ const chooseFighter = (fighter) => {
     if (team2.length<2){
 
         if(team1.length <2){
+
         team1.push(allPlayers[fighter]);
+
         } else {
+
         team2.push(allPlayers[fighter]); 
+
             if (team2.length == 2){
-                console.log("este team 1", team1);
-                console.log("este team 2", team2);
+                console.log("este team 1 choosefighter", team1);
+                console.log("este team 2 choosefighter", team2);
                 llenaEquipos();
                 cambiaFase("fase3");
 
@@ -50,6 +56,9 @@ const llenaEquipos = () => {
         <div><img class="picFighter" src="img/${team2[0].nombre}.jfif" alt="luchador3"></div>
         <div><img class="picFighter" src="img/${team2[1].nombre}.jfif" alt="luchador4"></div>
     </div>`;
+    console.log("este team 1 llenaequipos", team1);
+    console.log("este team 2 llenaequipos", team2);
+    
 };
 
 document.body.onkeyup = function(e){
@@ -61,11 +70,7 @@ document.body.onkeyup = function(e){
 let i=0;
 let j=0;
 
-const scenario = () => {
-
-    
-    // while (team1[i].vida>=0 || team2[j].vida>=0){
-
+const scenarioFight = (i, j) => {
     let lucha = document.getElementById("lucha");
     lucha.innerHTML = `
     <div class="teamCharacters">
@@ -76,28 +81,42 @@ const scenario = () => {
     <div class="teamCharacters">
         <div><img class="picFighter" src="img/${team2[j].nombre}.jfif" alt="luchador3"></div>
     </div>`;
-    
-    setTimeout(()=> {
-        i++;
-    }, 2000);
-    setTimeout(()=> {
-        j++;
-    }, 3000);
+    console.log("este team 1 scenariofight", team1);
+    console.log("este team 2 scenariofight", team2);
+
+}
+
+const scenario = () => {
+    let i=0, j=0;
+    console.log(i, j);
+    scenarioFight(i, j);
    
-    // }
-    // (team1[i].vida<=0) ? i++ : i=i;
-    // (team2[j].vida<=0) ? j++ : j=j;
+    
+    
+    console.log("este team 1 scenario", team1);
+    console.log("este team 2 scenario", team2);
 }
 
 const fighting = () => {
     
-    p1 = team1[i];
-    p2 = team2[j];
+
+    p1 = team1[0];
+    p2 = team2[0];
+    console.log("empieza la lucha");
 
     p1.hit(p2);
     p2.hit(p1);
 
-    console.log(p1.vida, p2.vida);
+    console.log("fighting", team1[i], team2[j]);
+
+    if (team1[i].vida<=0) {
+        i++;
+        scenarioFight(i, j);
+     }
+    if (team2[j].vida<=0) {
+        j++;
+        scenarioFight(i, j);
+    }
     // do {
     // } while (team1[2].vida<=0 || team2[2].vida<=0);
 }

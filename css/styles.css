@@ -78,9 +78,15 @@ body{
     flex-direction: column;
     height: 8em;
     width: 8em;
+    margin: 6em;
 }
 
 .fightPanel{
     height: 8em;
     width: 8em;
+}
+
+.fotoVersus{
+    width: 30em;
+    height: 18em;
 }

@@ -10,24 +10,31 @@ body{
 }
 .secvis{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    background-color: black;
+    background-color: rgb(168, 81, 81);
     width: 100vw;
     height: 100vh;
 }
 
 .textoBasico{
     color: white;
+    font-size: 4em;
 }
 
+.fondoLucha{
+    background-color: aqua;
+    height: 100vh;
+    width: 100vh;
+}
 .luchadores{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: green;
 }
 
 .picFighter{

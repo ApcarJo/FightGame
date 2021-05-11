@@ -3,21 +3,20 @@ let team2 = [];
 let p1 = "";
 let p2 = "";
 
+// Function to forward to the next phase
 const cambiaFase = (destino) =>{
     let arrFase = ["fase1", "fase2", "fase3", "fase4", "fase5"];
-
     arrFase = arrFase.filter(val => !destino.includes(val));
-
     document.getElementById(destino).style.display = "block";
 
     for (let _fase of arrFase){
         document.getElementById(_fase).style.display = "none";
     }
-
 };
 
+// function to choose 2 fighters and add them to each team with a push method
 const chooseFighter = (fighter) => {
-    
+    /////////////////////////////// BORRAR la seleccion para nueva pelea
     if (team2.length<2){
 
         if(team1.length <2){
@@ -28,6 +27,7 @@ const chooseFighter = (fighter) => {
 
         team2.push(allPlayers[fighter]); 
 
+            // Once we have 2 fighters in each team, we call a function to show them on screen 
             if (team2.length == 2){
                 console.log("este team 1 choosefighter", team1);
                 console.log("este team 2 choosefighter", team2);
@@ -44,6 +44,7 @@ const chooseFighter = (fighter) => {
     }    
 };
 
+// Function to show both teams on html
 const llenaEquipos = () => {
     let equipos = document.getElementById("equipos");
     equipos.innerHTML = `
@@ -61,15 +62,22 @@ const llenaEquipos = () => {
     
 };
 
-document.body.onkeyup = function(e){
+let i=0, j=0;
+document.body.onkeyup = (e) =>{
     if(e.keyCode == 32){
-        scenario();
+        scenarioFight(i,j);
+        //scenario(); Calling the function scenario.
     }
 }
 
-let i=0;
-let j=0;
+// Code to add something between chooseFight and the fight
 
+// const scenario = () => {
+//     console.log(i, j);
+//     scenarioFight(i, j);
+// };
+
+    // Muestro el escenario de lucha junto a los 2 primeros luchadores
 const scenarioFight = (i, j) => {
     let lucha = document.getElementById("lucha");
     lucha.innerHTML = `
@@ -80,35 +88,47 @@ const scenarioFight = (i, j) => {
     <div class="teamCharacters">
         <div><img class="picFighter" src="img/${team2[j].nombre}.jfif" alt="luchador3"></div>
     </div>`;
-    console.log("este team 1 scenariofight", team1);
-    console.log("este team 2 scenariofight", team2);
 
-}
-
-const scenario = () => {
-    let i=0, j=0;
-    console.log(i, j);
-    scenarioFight(i, j);
-   
-    
-    
-    console.log("este team 1 scenario", team1);
-    console.log("este team 2 scenario", team2);
+    // Cambio el color del fondo
+    let fondo = document.getElementById("fase4");
+    fondo.style.backgroundColor = "green";
 };
+
+
 
 const fighting = () => {
     
     if ((team1[i].vida<=0 && i==1) || (team2[j].vida<=0 && j==1)){
         let resultadoCombate = document.getElementById("resultadoCombate");
 
-        (team2[i].vida<=0) ? 
-        resultadoCombate.innerHTML = `El equipo de ${team1[i].nombre} ha ganado` :
-        resultadoCombate.innerHTML = `El equipo de ${team2[j].nombre} ha ganado`;
-
+        if (team1[i].vida<=0 && team2[j].vida<=0) { 
+        resultadoCombate.innerHTML = `Double KO`;
+        team1=[];
+        team2=[];
+    
         setTimeout(()=> {
-            console.log("fase 55555555555555555555555555555555555555555555555");
             cambiaFase("fase5");
         }, 2000);
+        } else if (team2[j].vida<=0) {
+            resultadoCombate.innerHTML = `El equipo de ${team1[i].nombre} ha ganado`;
+            team1=[];
+            team2=[];
+            
+            setTimeout(()=> {
+                cambiaFase("fase5");
+            }, 2000);
+            
+        } else{
+        resultadoCombate.innerHTML = `El equipo de ${team2[j].nombre} ha ganado`;
+
+        }
+        team1=[];
+        team2=[];
+        
+        setTimeout(()=> {
+            cambiaFase("fase5");
+        }, 2000);
+
     } else {
 
         p1 = team1[i];
@@ -132,9 +152,7 @@ const fighting = () => {
         }
 
         console.log("estos son i y j", i, j);
-    
     }
-    
 };
 
 // calcular distancia entre 2 divs, usando coordenadas de cada div y restando una frente al otro, condicional x=div1pos-div2pos, if x<distanciamin && userpressHitButton, "puser1.hit(puser2)"

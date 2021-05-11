@@ -11,10 +11,11 @@
 <body>
 
     <section class="secvis" id="fase1">
-        <p class="textoBasico" onclick="cambiaFase('fase2')">PRESS START BUTON</p>
+        <span class="textoBasico" onclick="cambiaFase('fase2')">PRESS START BUTON</span>
         
     </section>
     <section class="secvis" id="fase2" style="display:none">
+        <span class="textoBasico">estoy en fase 2</span>
     
         <div class="luchadores">
             <div class="avatar" id="1" onclick="chooseFighter(1)"><img class="picFighter" src="img/Neo.jfif"></div>
@@ -25,25 +26,24 @@
             <div class="avatar" id="6" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
         </div>
 
-        
-
     </section>
 
     <section class="secvis" id="fase3" style="display:none">
-    <p class="textoBasico">ESTOY EN LA FASE 3!!!</p>
+    <span class="textoBasico">ESTOY EN LA FASE 3!!!</span>
         <div class="maquetaEquipos" id="equipos"></div>
     </section>
     
     <section class="secvis" id="fase4" style="display:none">
-        <p class="textoBasico">ESTOY EN LA FASE 4!!!</p>
+        <span class="textoBasico">ESTOY EN LA FASE 4!!!</span>
         <div><img onclick="fighting()" src="img/fight.png"></div>
         <div class="maquetaEquipos" id="lucha"></div>
     </section>
 
     <section class="secvis" id="fase5" style="display:none">
-        <p class="textoBasico">ESTOY EN LA FASE 5!!!</p>
+        <span class="textoBasico">ESTOY EN LA FASE 5!!!</span>
+        <span class="textoBasico" onclick="cambiaFase('fase2')">PRESS START BUTON</span>
             
-        <div class="maquetaEquipos" id="resultadoCombate"></div>
+        <div class="maquetaEquipos textoBasico" id="resultadoCombate"></div>
     </section>
 
     <script src="/js/fighters.js"></script>

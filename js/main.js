@@ -2,7 +2,7 @@ let team1 = [];
 let team2 = [];
 
 const cambiaFase = (destino) =>{
-    let arrFase = ["fase1", "fase2"];
+    let arrFase = ["fase1", "fase2", "fase3", "fase4"];
 
     arrFase = arrFase.filter(val => !destino.includes(val));
 
@@ -22,20 +22,84 @@ const chooseFighter = (fighter) => {
         team1.push(allPlayers[fighter]);
         } else {
         team2.push(allPlayers[fighter]); 
-        if (team2.length == 2){
-            console.log("este team 1", team1);
-            console.log("este team 2", team2);
-            cambiaFase("fase3");
+            if (team2.length == 2){
+                console.log("este team 1", team1);
+                console.log("este team 2", team2);
+                llenaEquipos();
+                cambiaFase("fase3");
+
+                setTimeout(()=> {
+                    cambiaFase("fase4");
+                }, 2000);
             }
         }
-        
-
         document.getElementById(fighter).onclick = "";
         document.getElementById(fighter).className = "seleccionado";
-
-    } 
-
-        
-        
-    
+    }    
 };
+
+const llenaEquipos = () => {
+    let equipos = document.getElementById("equipos");
+    equipos.innerHTML = `
+    <div class="teamCharacters">
+        <div><img class="picFighter" src="img/${team1[0].nombre}.jfif" alt="luchador1"></div>
+        <div><img class="picFighter" src="img/${team1[1].nombre}.jfif" alt="luchador2"></div>
+    </div>
+    <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
+    <div class="teamCharacters">
+        <div><img class="picFighter" src="img/${team2[0].nombre}.jfif" alt="luchador3"></div>
+        <div><img class="picFighter" src="img/${team2[1].nombre}.jfif" alt="luchador4"></div>
+    </div>`;
+};
+
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        scenario();
+    }
+}
+
+let i=0;
+let j=0;
+
+const scenario = () => {
+
+    
+    // while (team1[i].vida>=0 || team2[j].vida>=0){
+
+    let lucha = document.getElementById("lucha");
+    lucha.innerHTML = `
+    <div class="teamCharacters">
+        <div><img class="picFighter" src="img/${team1[i].nombre}.jfif" alt="luchador3"></div>
+
+    </div>
+    <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
+    <div class="teamCharacters">
+        <div><img class="picFighter" src="img/${team2[j].nombre}.jfif" alt="luchador3"></div>
+    </div>`;
+    
+    setTimeout(()=> {
+        i++;
+    }, 2000);
+    setTimeout(()=> {
+        j++;
+    }, 3000);
+   
+    // }
+    // (team1[i].vida<=0) ? i++ : i=i;
+    // (team2[j].vida<=0) ? j++ : j=j;
+}
+
+const fighting = () => {
+    
+    p1 = team1[i];
+    p2 = team2[j];
+
+    p1.hit(p2);
+    p2.hit(p1);
+
+    console.log(p1.vida, p2.vida);
+    // do {
+    // } while (team1[2].vida<=0 || team2[2].vida<=0);
+}
+
+// calcular distancia entre 2 divs, usando coordenadas de cada div y restando una frente al otro, condicional x=div1pos-div2pos, if x<distanciamin && userpressHitButton, "puser1.hit(puser2)"

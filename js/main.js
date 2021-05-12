@@ -155,4 +155,10 @@ const fighting = () => {
     }
 };
 
+const reset = document.getElementById('playAgain');
+
+reset.addEventListener('click', () => {
+    window.location.reload();
+})
+
 // calcular distancia entre 2 divs, usando coordenadas de cada div y restando una frente al otro, condicional x=div1pos-div2pos, if x<distanciamin && userpressHitButton, "puser1.hit(puser2)"

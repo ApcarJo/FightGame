@@ -31,7 +31,7 @@ const chooseFighter = (fighter) => {
             if (team2.length == 2){
                 console.log("este team 1 choosefighter", team1);
                 console.log("este team 2 choosefighter", team2);
-                llenaEquipos();
+                fillTeams();
                 cambiaFase("fase3");
 
                 setTimeout(()=> {
@@ -45,9 +45,9 @@ const chooseFighter = (fighter) => {
 };
 
 // Function to show both teams on html
-const llenaEquipos = () => {
-    let equipos = document.getElementById("equipos");
-    equipos.innerHTML = `
+const fillTeams = () => {
+    let teams = document.getElementById("teams");
+    teams.innerHTML = `
     <div class="teamCharacters">
         <div><img class="picFighter" src="img/${team1[0].nombre}.jfif" alt="luchador1"></div>
         <div><img class="picFighter" src="img/${team1[1].nombre}.jfif" alt="luchador2"></div>
@@ -99,10 +99,10 @@ const scenarioFight = (i, j) => {
 const fighting = () => {
     
     if ((team1[i].vida<=0 && i==1) || (team2[j].vida<=0 && j==1)){
-        let resultadoCombate = document.getElementById("resultadoCombate");
+        let winner = document.getElementById("winner");
 
         if (team1[i].vida<=0 && team2[j].vida<=0) { 
-        resultadoCombate.innerHTML = `Double KO`;
+        winner.innerHTML = `Double KO`;
         team1=[];
         team2=[];
     
@@ -110,7 +110,7 @@ const fighting = () => {
             cambiaFase("fase5");
         }, 2000);
         } else if (team2[j].vida<=0) {
-            resultadoCombate.innerHTML = `El equipo de ${team1[i].nombre} ha ganado`;
+            winner.innerHTML = `El equipo de ${team1[i].nombre} ha ganado`;
             team1=[];
             team2=[];
             
@@ -119,7 +119,7 @@ const fighting = () => {
             }, 2000);
             
         } else{
-        resultadoCombate.innerHTML = `El equipo de ${team2[j].nombre} ha ganado`;
+        winner.innerHTML = `El equipo de ${team2[j].nombre} ha ganado`;
 
         }
         team1=[];

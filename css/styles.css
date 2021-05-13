@@ -101,14 +101,17 @@ body{
     align-items: center;
 
     flex-direction: column;
-    height: 8em;
-    width: 8em;
+    height: 80em;
+    width: 20em;
     margin: 6em;
+
+    background-color: yellow;
 }
 
 .fightPanel{
     height: 8em;
     width: 8em;
+    margin: 2em;
 }
 
 .fotoVersus{
@@ -119,10 +122,12 @@ body{
 .lifeBarP1{
     height: 5em;
     width: 20em;
-    background-color: green;
+    background-color: greenyellow;
+    border: solid 1em black;
 }
 .lifeBarP2{
     height: 5em;
     width: 20em;
-    background-color: green;
+    background-color: hotpink;
+    border: solid 1em black;
 }

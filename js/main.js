@@ -80,15 +80,17 @@ const scenarioFight = (i, j) => {
     <div class="teamCharacters">
         <div class="lifeBarP1"></div>
         <div><img onclick="fighting1()" src="img/fight.png"></div>
-        <div><img class="picFighter" src="img/${team1[i].nombre}.jfif" alt="luchador3"></div>
+        <div><img class="picFighter" id="fighter1Hit" src="img/${team1[i].nombre}.jfif" alt="luchador3"></div>
         <span class="textoBasico" id="vidaP1">Vida de ${team1[i].nombre} es ${team1[i].vida}</span> 
 
     </div>
+    <div class="teamCharacters">
     <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
+    </div>
     <div class="teamCharacters">
         <div class="lifeBarP2"></div>
         <div><img onclick="fighting2()" src="img/fight.png"></div>
-        <div><img class="picFighter" src="img/${team2[j].nombre}.jfif" alt="luchador3"></div>
+        <div><img class="picFighter" id="fighter2Hit" src="img/${team2[j].nombre}.jfif" alt="luchador3"></div>
         <span class="textoBasico" id="vidaP2">Vida de ${team2[j].nombre} es ${team2[j].vida}</span>
         
     </div>`;
@@ -148,10 +150,14 @@ const fighting1 = () => {
         p1.hit(p2);
 
         let vidaP1 = document.getElementById("vidaP1");
-        vidaP1.innerHTML = `Vida de ${team1[i].nombre} es ${team1[i].vida}`
+        vidaP1.innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
+        // document.getElementById("lifeBarP1").style.width -= `5em`;
+       
         
         let vidaP2 = document.getElementById("vidaP2");
-        vidaP2.innerHTML = `Vida de ${team2[j].nombre} es ${team2[j].vida}`
+        vidaP2.innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
+        let lifeBarP2 = document.getElementById("lifeBarP2");
+        // document.getElementById("lifeBarP2").style.width -= `5em`;
 
         
         // if (p1.vida<=0 && i<1) {
@@ -210,11 +216,14 @@ const fighting2 = () => {
 
         p2.hit(p1);
 
+        /* Update life status after each hit */
         let vidaP1 = document.getElementById("vidaP1");
-        vidaP1.innerHTML = `Vida de ${team1[i].nombre} es ${team1[i].vida}`
+        vidaP1.innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
+        // document.getElementById("lifeBarP1").style.width -= 5;
         
         let vidaP2 = document.getElementById("vidaP2");
-        vidaP2.innerHTML = `Vida de ${team2[j].nombre} es ${team2[j].vida}`
+        vidaP2.innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
+        // document.getElementById("lifeBarP2").style.width -= 5;
 
         
         // if (p1.vida<=0 && i<1) {
@@ -229,6 +238,20 @@ const fighting2 = () => {
     }
 };
 
+document.body.onkeydown = (e) =>{
+    if(e.keyCode == 80){
+        fighting2();
+        
+        //scenario(); Calling the function scenario.
+    }
+
+    if(e.keyCode == 81){
+        fighting1();
+        //scenario(); Calling the function scenario.
+    }
+}
+
+
 const reset = document.getElementById('playAgain');
 
 reset.addEventListener('click', () => {
@@ -236,3 +259,5 @@ reset.addEventListener('click', () => {
 })
 
 // calcular distancia entre 2 divs, usando coordenadas de cada div y restando una frente al otro, condicional x=div1pos-div2pos, if x<distanciamin && userpressHitButton, "puser1.hit(puser2)"
+
+// Añadir un contador de combate que resuelva ganador al equipo que vaya ganando cuando el tiempo llega a 0.

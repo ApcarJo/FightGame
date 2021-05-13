@@ -17,23 +17,16 @@ const cambiaFase = (destino) =>{
 
 // function to choose 2 fighters and add them to each team with a push method
 const chooseFighter = (fighter) => {
-    
-    /////////////////////////////// BORRAR la seleccion para nueva pelea
+
     if (team2.length<2){
-
         if(team1.length <2){
-
-        team1.push(allPlayers[fighter]);
-
+            team1.push(allPlayers[fighter]);
         } else {
-
-        team2.push(allPlayers[fighter]); 
+            team2.push(allPlayers[fighter]); 
 
             // Once we have 2 fighters in each team, we call a function to show them on screen 
             if (team2.length == 2){
-                console.log("este team 1 choosefighter", team1);
-                console.log("este team 2 choosefighter", team2);
-                llenaEquipos();
+                fillTeams();
                 cambiaFase("fase3");
 
                 setTimeout(()=> {
@@ -48,9 +41,9 @@ const chooseFighter = (fighter) => {
 };
 
 // Function to show both teams on html
-const llenaEquipos = () => {
-    let equipos = document.getElementById("equipos");
-    equipos.innerHTML = `
+const fillTeams = () => {
+    let teams = document.getElementById("teams");
+    teams.innerHTML = `
     <div class="teamCharacters">
         <div><img class="picFighter" src="img/${team1[0].nombre}.jfif" alt="luchador1"></div>
         <div><img class="picFighter" src="img/${team1[1].nombre}.jfif" alt="luchador2"></div>
@@ -85,11 +78,19 @@ const scenarioFight = (i, j) => {
     let lucha = document.getElementById("lucha");
     lucha.innerHTML = `
     <div class="teamCharacters">
+        <div class="lifeBarP1"></div>
+        <div><img onclick="fighting1()" src="img/fight.png"></div>
         <div><img class="picFighter" src="img/${team1[i].nombre}.jfif" alt="luchador3"></div>
+        <span class="textoBasico" id="vidaP1">Vida de ${team1[i].nombre} es ${team1[i].vida}</span> 
+
     </div>
     <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
     <div class="teamCharacters">
+        <div class="lifeBarP2"></div>
+        <div><img onclick="fighting2()" src="img/fight.png"></div>
         <div><img class="picFighter" src="img/${team2[j].nombre}.jfif" alt="luchador3"></div>
+        <span class="textoBasico" id="vidaP2">Vida de ${team2[j].nombre} es ${team2[j].vida}</span>
+        
     </div>`;
 
     // Cambio el color del fondo
@@ -98,14 +99,13 @@ const scenarioFight = (i, j) => {
 };
 
 
+const fighting1 = () => {
 
-const fighting = () => {
-    console.log("antes del if", i, j);
     if ((team1[i].vida<=0 && i==1) || (team2[j].vida<=0 && j==1)){
-        let resultadoCombate = document.getElementById("resultadoCombate");
+        let winner = document.getElementById("winner");
 
         if (team1[i].vida<=0 && team2[j].vida<=0) { 
-        resultadoCombate.innerHTML = `Double KO`;
+        winner.innerHTML = `Double KO`;
         team1=[];
         team2=[];
     
@@ -113,34 +113,24 @@ const fighting = () => {
             cambiaFase("fase5");
         }, 2000);
         } else if (team2[j].vida<=0) {
-            resultadoCombate.innerHTML = `El equipo de ${team1[i].nombre} ha ganado`;
+            winner.innerHTML = `El equipo de ${team1[i].nombre} ha ganado`;
+            team1=[];
+            team2=[];
             
             setTimeout(()=> {
                 cambiaFase("fase5");
             }, 2000);
             
         } else{
-        resultadoCombate.innerHTML = `El equipo de ${team2[j].nombre} ha ganado`;
-
+        winner.innerHTML = `El equipo de ${team2[j].nombre} ha ganado`;
         }
     
-        
         setTimeout(()=> {
             cambiaFase("fase5");
         }, 2000);
 
     } else {
 
-        p1 = team1[i];
-        p2 = team2[j];
-        console.log("Lucha!!!");
-
-        p1.hit(p2);
-        p2.hit(p1);
-
-        console.log("fighting", team1[i], team2[j]);
-
-        
         if (p1.vida<=0 && i<1) {
             i++;
             scenarioFight(i, j);
@@ -151,8 +141,98 @@ const fighting = () => {
             scenarioFight(i, j);
         }
 
-        console.log("estos son i y j", i, j);
+        p1 = team1[i];
+        p2 = team2[j];
+        console.log("Lucha!!!");
+
+        p1.hit(p2);
+
+        let vidaP1 = document.getElementById("vidaP1");
+        vidaP1.innerHTML = `Vida de ${team1[i].nombre} es ${team1[i].vida}`
+        
+        let vidaP2 = document.getElementById("vidaP2");
+        vidaP2.innerHTML = `Vida de ${team2[j].nombre} es ${team2[j].vida}`
+
+        
+        // if (p1.vida<=0 && i<1) {
+        //     i++;
+        //     scenarioFight(i, j);
+        // }
+
+        // if (p2.vida<=0 && j<1) {
+        //     j++;
+        //     scenarioFight(i, j);
+        // }
     }
 };
+
+const fighting2 = () => {
+
+    if ((team1[i].vida<=0 && i==1) || (team2[j].vida<=0 && j==1)){
+        let winner = document.getElementById("winner");
+
+        if (team1[i].vida<=0 && team2[j].vida<=0) { 
+        winner.innerHTML = `Double KO`;
+    
+        setTimeout(()=> {
+            cambiaFase("fase5");
+        }, 2000);
+        } else if (team2[j].vida<=0) {
+            winner.innerHTML = `El equipo de ${team1[i].nombre} ha ganado`;
+
+            setTimeout(()=> {
+                cambiaFase("fase5");
+            }, 2000);
+            
+        } else{
+        winner.innerHTML = `El equipo de ${team2[j].nombre} ha ganado`;
+        }
+    
+        setTimeout(()=> {
+            cambiaFase("fase5");
+        }, 2000);
+
+    } else {
+
+        if (p1.vida<=0 && i<1) {
+            i++;
+            scenarioFight(i, j);
+        }
+
+        if (p2.vida<=0 && j<1) {
+            j++;
+            scenarioFight(i, j);
+        }
+
+        p1 = team1[i];
+        p2 = team2[j];
+        console.log("Lucha!!!");
+
+        p2.hit(p1);
+
+        let vidaP1 = document.getElementById("vidaP1");
+        vidaP1.innerHTML = `Vida de ${team1[i].nombre} es ${team1[i].vida}`
+        
+        let vidaP2 = document.getElementById("vidaP2");
+        vidaP2.innerHTML = `Vida de ${team2[j].nombre} es ${team2[j].vida}`
+
+        
+        // if (p1.vida<=0 && i<1) {
+        //     i++;
+        //     scenarioFight(i, j);
+        // }
+
+        // if (p2.vida<=0 && j<1) {
+        //     j++;
+        //     scenarioFight(i, j);
+        // }
+    }
+};
+
+const reset = document.getElementById('playAgain');
+
+reset.addEventListener('click', () => {
+    window.location.reload();
+})
 
 // calcular distancia entre 2 divs, usando coordenadas de cada div y restando una frente al otro, condicional x=div1pos-div2pos, if x<distanciamin && userpressHitButton, "puser1.hit(puser2)"

@@ -3,6 +3,7 @@ let team2 = [];
 let p1 = "";
 let p2 = "";
 
+
 // Function to forward to the next phase
 const cambiaFase = (destino) =>{
     let arrFase = ["fase1", "fase2", "fase3", "fase4", "fase5"];
@@ -16,6 +17,7 @@ const cambiaFase = (destino) =>{
 
 // function to choose 2 fighters and add them to each team with a push method
 const chooseFighter = (fighter) => {
+    
     /////////////////////////////// BORRAR la seleccion para nueva pelea
     if (team2.length<2){
 
@@ -42,6 +44,7 @@ const chooseFighter = (fighter) => {
         document.getElementById(fighter).onclick = "";
         document.getElementById(fighter).className = "seleccionado";
     }    
+    console.log("el test del test", allPlayers);
 };
 
 // Function to show both teams on html
@@ -97,7 +100,7 @@ const scenarioFight = (i, j) => {
 
 
 const fighting = () => {
-    
+    console.log("antes del if", i, j);
     if ((team1[i].vida<=0 && i==1) || (team2[j].vida<=0 && j==1)){
         let resultadoCombate = document.getElementById("resultadoCombate");
 
@@ -111,8 +114,6 @@ const fighting = () => {
         }, 2000);
         } else if (team2[j].vida<=0) {
             resultadoCombate.innerHTML = `El equipo de ${team1[i].nombre} ha ganado`;
-            team1=[];
-            team2=[];
             
             setTimeout(()=> {
                 cambiaFase("fase5");
@@ -122,8 +123,7 @@ const fighting = () => {
         resultadoCombate.innerHTML = `El equipo de ${team2[j].nombre} ha ganado`;
 
         }
-        team1=[];
-        team2=[];
+    
         
         setTimeout(()=> {
             cambiaFase("fase5");

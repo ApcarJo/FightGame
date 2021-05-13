@@ -3,7 +3,7 @@ class Fighter{
 
     constructor(nombre, ataque, defensa, tecnica, agilidad){
 
-        this.vida = 1000;
+        this.vida = 3000;
         this.agilidad = agilidad;
         this.nombre = nombre;
         this.ataque = ataque;

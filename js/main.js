@@ -31,6 +31,7 @@ const chooseFighter = (fighter) => {
 
                 setTimeout(()=> {
                     cambiaFase("fase4");
+                    scenarioFight(i,j);
                 }, 2000);
             }
         }
@@ -53,8 +54,6 @@ const fillTeams = () => {
         <div><img class="picFighter" src="img/${team2[0].nombre}.jfif" alt="luchador3"></div>
         <div><img class="picFighter" src="img/${team2[1].nombre}.jfif" alt="luchador4"></div>
     </div>`;
-    console.log("este team 1 llenaequipos", team1);
-    console.log("este team 2 llenaequipos", team2);
     
 };
 
@@ -78,20 +77,22 @@ const scenarioFight = (i, j) => {
     let lucha = document.getElementById("lucha");
     lucha.innerHTML = `
     <div class="teamCharacters">
-        <div class="lifeBarP1"></div>
-        <div><img onclick="fighting1()" src="img/fight.png"></div>
-        <div><img class="picFighter" id="fighter1Hit" src="img/${team1[i].nombre}.jfif" alt="luchador3"></div>
-        <span class="textoBasico" id="vidaP1">Vida de ${team1[i].nombre} es ${team1[i].vida}</span> 
+        <div class="lifeBar">
+        <div class="lifeBarP1" id="fighter1Hit"></div>
+        </div>
+        <div><img class="scenarioFight"  src="img/${team1[i].nombre}.jfif" alt="luchador3"></div>
+        <span class="textoBasico" id="vidaP1">${team1[i].nombre} : ${team1[i].vida}</span> 
 
     </div>
     <div class="teamCharacters">
     <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
     </div>
     <div class="teamCharacters">
-        <div class="lifeBarP2"></div>
-        <div><img onclick="fighting2()" src="img/fight.png"></div>
-        <div><img class="picFighter" id="fighter2Hit" src="img/${team2[j].nombre}.jfif" alt="luchador3"></div>
-        <span class="textoBasico" id="vidaP2">Vida de ${team2[j].nombre} es ${team2[j].vida}</span>
+        <div class="lifeBar">
+        <div class="lifeBarP2" id="fighter2Hit"></div>
+        </div>
+        <div><img class="scenarioFight" id="fighter2Hit" src="img/${team2[j].nombre}.jfif" alt="luchador3"></div>
+        <span class="textoBasico" id="vidaP2">${team2[j].nombre} : ${team2[j].vida}</span>
         
     </div>`;
 
@@ -108,16 +109,14 @@ const fighting1 = () => {
 
         if (team1[i].vida<=0 && team2[j].vida<=0) { 
         winner.innerHTML = `Double KO`;
-        team1=[];
-        team2=[];
+
     
         setTimeout(()=> {
             cambiaFase("fase5");
         }, 2000);
         } else if (team2[j].vida<=0) {
             winner.innerHTML = `El equipo de ${team1[i].nombre} ha ganado`;
-            team1=[];
-            team2=[];
+
             
             setTimeout(()=> {
                 cambiaFase("fase5");
@@ -133,31 +132,40 @@ const fighting1 = () => {
 
     } else {
 
-        if (p1.vida<=0 && i<1) {
-            i++;
-            scenarioFight(i, j);
-        }
-
-        if (p2.vida<=0 && j<1) {
-            j++;
-            scenarioFight(i, j);
-        }
-
         p1 = team1[i];
         p2 = team2[j];
         console.log("Lucha!!!");
 
         p1.hit(p2);
 
-        let vidaP1 = document.getElementById("vidaP1");
-        vidaP1.innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
-        // document.getElementById("lifeBarP1").style.width -= `5em`;
+        p1 = team1[i];
+        p2 = team2[j];
+
+        // if (p1.vida<=0 && i<1) {
+        //     i++;
+            
+        //     document.getElementById("vidaP1").innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
+        //     scenarioFight(i, j);
+        // }
+
+        if (p2.vida<=0 && j<1) {
+            j++;
+            
+            document.getElementById("vidaP2").innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
+            scenarioFight(i, j);
+        }
+
+        // let vidaP1 = document.getElementById("vidaP1");
+        // vidaP1.innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
+        // let lifeBar1 = document.getElementById("fighter1Hit");
+        // lifeBar1.style.width -= `${team1[i].vida}/10 + em`;
        
         
         let vidaP2 = document.getElementById("vidaP2");
-        vidaP2.innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
-        let lifeBarP2 = document.getElementById("lifeBarP2");
-        // document.getElementById("lifeBarP2").style.width -= `5em`;
+        vidaP2.innerHTML = `${team2[j].nombre} : ${p2.vida}`;
+        let lifeBar1 = document.getElementById("fighter2Hit");
+        lifeBar1.style.width = team2[j].vida*0.0066+1+ "em";
+        console.log("esto vale", lifeBar1.style.width);
 
         
         // if (p1.vida<=0 && i<1) {
@@ -199,31 +207,43 @@ const fighting2 = () => {
         }, 2000);
 
     } else {
-
-        if (p1.vida<=0 && i<1) {
-            i++;
-            scenarioFight(i, j);
-        }
-
-        if (p2.vida<=0 && j<1) {
-            j++;
-            scenarioFight(i, j);
-        }
-
         p1 = team1[i];
         p2 = team2[j];
         console.log("Lucha!!!");
 
         p2.hit(p1);
 
+        p1 = team1[i];
+        p2 = team2[j];
+
+        if (p1.vida<=0 && i<1) {
+            i++;
+            
+            document.getElementById("vidaP1").innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
+            scenarioFight(i, j);
+        }
+
+        // if (p2.vida<=0 && j<1) {
+        //     j++;
+            
+        //     document.getElementById("vidaP2").innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
+        //     scenarioFight(i, j);
+        // }
+
+        
+
         /* Update life status after each hit */
         let vidaP1 = document.getElementById("vidaP1");
-        vidaP1.innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
-        // document.getElementById("lifeBarP1").style.width -= 5;
+        vidaP1.innerHTML = `${team1[i].nombre} : ${p1.vida}`;
+        let lifeBar = document.getElementById("fighter1Hit");
+        lifeBar.style.width = team1[i].vida*0.0066+1 + "em";
+        console.log(lifeBar.style.width);
         
-        let vidaP2 = document.getElementById("vidaP2");
-        vidaP2.innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
-        // document.getElementById("lifeBarP2").style.width -= 5;
+        // let vidaP2 = document.getElementById("vidaP2");
+        // vidaP2.innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
+        // let lifeBar1 = document.getElementById("fighter2Hit");
+        // lifeBar1.style.width -= `${team2[j].vida}/10 + em`;
+        // console.log(lifeBar1.style.width);
 
         
         // if (p1.vida<=0 && i<1) {
@@ -238,18 +258,88 @@ const fighting2 = () => {
     }
 };
 
-document.body.onkeydown = (e) =>{
-    if(e.keyCode == 80){
-        fighting2();
+
+const hit = (i, j) => {
+    let lucha = document.getElementById("lucha");
+    lucha.innerHTML = `
+    <div class="teamCharacters">
+        <div class="lifeBar">
+        <div class="lifeBarP1" id="fighter1Hit"></div>
+        </div>
+        <div><img class="scenarioFight" id="attack1" alt="luchador3"></div>
+        <span class="textoBasico" id="vidaP1">${team1[i].nombre} : ${team1[i].vida}</span> 
+
+    </div>
+    <div class="teamCharacters">
+    <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
+    </div>
+    <div class="teamCharacters">
+        <div class="lifeBar">
+        <div class="lifeBarP2" id="fighter2Hit"></div>
+        </div>
+        <div><img class="scenarioFight" id="fighter2Hit" src="img/${team2[j].nombre}.jfif" alt="luchador3"></div>
+        <span class="textoBasico" id="vidaP2">${team2[j].nombre} : ${team2[j].vida}</span>
         
+    </div>`;
+
+    // Cambio el color del fondo
+    let fondo = document.getElementById("fase4");
+    fondo.style.backgroundColor = "green";
+};
+
+document.body.onkeydown = (e) =>{
+    if(e.keyCode == 81){
+        for (let a=1; a<=4; a++){
+            (function (a) {
+                setTimeout(function () {
+                    document.getElementById("attack1").src=`img/MH2_Attack/Attack${a}.png`;
+                }, 75*a);
+              })(a);
+        }
+        fighting1();
+        // document.getElementById("attack1").src=`img/attack.jpg`;
+
         //scenario(); Calling the function scenario.
     }
 
-    if(e.keyCode == 81){
-        fighting1();
+    if(e.keyCode == 80){
+        fighting2();
         //scenario(); Calling the function scenario.
     }
 }
+// async function setInterval(){
+//     for (let a=1; a<=4; a++){
+//         (function (a) {
+//             setTimeout(function () {
+//                 document.getElementById("attack1").src=`img/MH2_Idle/Idle${a}.png`;
+//             }, 75*a);
+//           })(a);
+//     }
+// };
+    //scenario(); Calling the function scenario.
+
+document.body.onkeyup = (e) =>{
+    if(e.keyCode == 81){
+        // document.getElementById("attack1").src=`img/idlelast.gif`;
+        //scenario(); Calling the function scenario.
+        
+    }
+
+    if(e.keyCode == 80){
+        
+        //scenario(); Calling the function scenario.
+    }
+}
+
+// while (!document.body.onkeydown){
+//     for (let a=1; a<=4; a++){
+//         (function (a) {
+//             setTimeout(function () {
+//                 document.getElementById("attack1").src=`img/MH2_Idle/Idle${a}.png`;
+//             }, 75*a);
+//           })(a);
+//     }
+// }
 
 
 const reset = document.getElementById('playAgain');

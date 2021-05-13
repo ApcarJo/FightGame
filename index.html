@@ -12,6 +12,9 @@
 
     <section class="secvis backgroundStart gradient" id="fase1">
             <span class="textoBasico blur" onclick="cambiaFase('fase2')">PRESS START BUTTON</span>        
+            <div class="Character">
+            
+            <img class="Character_spritesheet pixelart face-down" src="/img/Run.png"  alt="Character" />
     </section>
 
     <section class="secvis gradient" id="fase2" style="display:none">
@@ -36,14 +39,18 @@
     <section class="secvis gradient" id="fase4" style="display:none">
         <!-- <span class="textoBasico">ESTOY EN LA FASE 4!!!</span> -->
         <!-- <div><img onclick="fighting()" src="img/fight.png"></div> -->
+        <div><img class="scenarioFightNew" id="attack1" alt="luchador3"></div>
         <div class="teamVsTeamScreen" id="lucha"></div>
     </section>
 
     <section class="secvis gradient" id="fase5" style="display:none">
         <!-- <span class="textoBasico">ESTOY EN LA FASE 5!!!</span> -->
-        <span class="textoBasico" id="playAgain">Vuelve a jugar </span>
-            
+        
+        <div class="winnerScreen">    
         <div class="teamVsteamScreen textoBasico" id="winner"></div>
+            <span class="textoBasico" id="playAgain">Vuelve a jugar </span>
+
+        </div>
     </section>
 
     <script src="/js/fighters.js"></script>

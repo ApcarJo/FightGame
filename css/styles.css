@@ -3,6 +3,10 @@
     padding: 0em;
 }
 
+:root {
+    --pixel-size: 10;
+ }
+
 body{
     all:unset;
     display: flex;
@@ -12,6 +16,11 @@ body{
 
 /* Section style */
 .secvis{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
 }
@@ -62,6 +71,23 @@ body{
     transition: 0.5s;
 }
 
+.scenarioFight{
+    width: 12em;
+    height: 12em;
+    border: solid 0.5em white;
+    margin: 1em;
+    transition: 0.5s;
+
+    border-radius: 100%;
+}
+.scenarioFightNew{
+    width: 12em;
+    height: 12em;
+
+    margin: 1em;
+    /* transition: 0.5s; */
+}
+
 /* Selected Fighter */
 .seleccionado{
     border: 0.5em solid red;
@@ -82,6 +108,8 @@ body{
     height: 100vh;
     width: 100vw;
     color: white;
+
+    /* background-color: green; */
 }
 
 .teams{
@@ -91,8 +119,10 @@ body{
 
     flex-direction: row;
 
-    height: 100vh;
-    width: 100vw;
+    height: 100em;
+    width: 100em;
+
+    background-color: red;
 }
 
 .teamCharacters{
@@ -102,15 +132,15 @@ body{
 
     flex-direction: column;
     height: 80em;
-    width: 20em;
+    width: 30em;
     margin: 6em;
 
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 .fightPanel{
-    height: 8em;
-    width: 8em;
+    height: 30em;
+    width: 30em;
     margin: 2em;
 }
 
@@ -120,14 +150,66 @@ body{
 }
 
 .lifeBarP1{
-    height: 5em;
+    height: 100%;
     width: 20em;
     background-color: greenyellow;
-    border: solid 1em black;
+    border: solid 0.2em black;
+
 }
 .lifeBarP2{
-    height: 5em;
+    height: 100%;
     width: 20em;
     background-color: hotpink;
-    border: solid 1em black;
+    border: solid 0.3em black;
+
 }
+
+.lifeBar{
+    display: flex;
+    align-items: center;
+    height: 5em;
+    width: 20em;
+    background-color: rgb(2, 196, 255);
+    
+
+}
+
+.winnerScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+}
+
+.Character {
+    width: calc(64px * var(--pixel-size));
+    height: calc(64px * var(--pixel-size));
+    overflow: hidden;
+    position: relative;
+    margin-top: 4em;
+    margin-right: 4em;
+    /* background-color: red; */
+ }
+ 
+ .Character_spritesheet {
+    animation: moveSpritesheet 1s steps(8) infinite;
+    width: 400em;
+    position: absolute;
+    
+ }
+ 
+.pixelart {
+    image-rendering: pixelated;
+ }
+
+
+ @keyframes moveSpritesheet {
+    0% {
+       transform: translate3d(0px,0,0);
+    }
+    100% {
+       transform: translate3d(-100%,0,0);
+    }
+ }

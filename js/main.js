@@ -352,3 +352,7 @@ reset.addEventListener('click', () => {
 // calcular distancia entre 2 divs, usando coordenadas de cada div y restando una frente al otro, condicional x=div1pos-div2pos, if x<distanciamin && userpressHitButton, "puser1.hit(puser2)"
 
 // Añadir un contador de combate que resuelva ganador al equipo que vaya ganando cuando el tiempo llega a 0.
+
+// Arreglar lo de la barra de vida
+
+// Cambiar la estructura de los divs de las fases para que no se resetee la barra de vida cuando un jugador es derrotado.

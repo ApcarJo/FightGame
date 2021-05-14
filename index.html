@@ -10,15 +10,20 @@
 </head>
 <body>
 
-    <section class="secvis backgroundStart gradient" id="fase1">
-            <span class="textoBasico blur" onclick="cambiaFase('fase2')">PRESS START BUTTON</span>        
+    <!-- SETCION TO START THE GAME -->
+
+    <section class="secvis gradient" id="phase1">
+            <span class="textoBasico blur" onclick="phaseChanger('phase2')">PRESS START BUTTON</span>        
             <div class="Character">
             
             <img class="Character_spritesheet pixelart face-down" src="/img/Run.png"  alt="Character" />
+            </div>
     </section>
 
-    <section class="secvis gradient" id="fase2" style="display:none">
-        <!-- <span class="textoBasico">estoy en fase 2</span> -->
+
+    <!-- SECTION TO CHOOSE THE FIGHTERS OF EACH TEAM -->
+
+    <section class="secvis gradient" id="phase2" style="display:none">
     
         <div class="fightersSelectionScreen">
             <div class="avatar" id="1" onclick="chooseFighter(1)"><img class="picFighter" src="img/Neo.jfif"></div>
@@ -30,25 +35,45 @@
         </div>
 
     </section>
+    
+    <!-- SECTION WHERE BOTH TEAMS ARE PRESENTED -->
 
-    <section class="secvis gradient" id="fase3" style="display:none">
-    <!-- <span class="textoBasico">ESTOY EN LA FASE 3!!!</span> -->
+    <section class="secvis gradient" id="phase3" style="display:none">
+    
         <div class="teamVsTeamScreen" id="teams"></div>
     </section>
     
-    <section class="secvis gradient" id="fase4" style="display:none">
-        <!-- <span class="textoBasico">ESTOY EN LA FASE 4!!!</span> -->
-        <!-- <div><img onclick="fighting()" src="img/fight.png"></div> -->
-        <div><img class="scenarioFightNew" id="attack1" alt="luchador3"></div>
-        <div class="teamVsTeamScreen" id="lucha"></div>
+    <section class="secvis gradient" id="phase4" style="display:none">
+
+        <div class="teamVsTeamScreen" id="lucha">
+            <div class="teamCharacters">
+                <div class="lifeBar">
+                <div class="lifeBarP1" id="fighter1Hit"></div>
+                </div>
+                <div><img class="scenarioFight" id="leftPlayer" alt="luchador1"></div>
+                <span class="textoBasico" id="vidaP1"></span> 
+        
+            </div>
+            <div class="teamCharacters">
+            <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
+            </div>
+            <div class="teamCharacters">
+                <div class="lifeBar">
+                <div class="lifeBarP2" id="fighter2Hit"></div>
+                </div>
+                <div><img class="scenarioFight" id="rightPlayer" alt="luchador2"></div>
+                <span class="textoBasico" id="vidaP2"></span>
+                
+            </div>
+        </div>
     </section>
 
-    <section class="secvis gradient" id="fase5" style="display:none">
-        <!-- <span class="textoBasico">ESTOY EN LA FASE 5!!!</span> -->
+    <section class="secvis gradient" id="phase5" style="display:none">
+        <!-- <span class="textoBasico">ESTOY EN LA phase 5!!!</span> -->
         
         <div class="winnerScreen">    
-        <div class="teamVsteamScreen textoBasico" id="winner"></div>
-            <span class="textoBasico" id="playAgain">Vuelve a jugar </span>
+        <div class="winnerScreen textoBasico" id="winner"></div>
+            <span class="textoBasico" id="playAgain">Do you want to play again?</span>
 
         </div>
     </section>

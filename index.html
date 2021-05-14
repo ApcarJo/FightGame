@@ -13,10 +13,10 @@
     <!-- SETCION TO START THE GAME -->
 
     <section class="secvis gradient" id="phase1">
-            <span class="textoBasico blur" onclick="phaseChanger('phase2')">PRESS START BUTTON</span>        
+            <span class="simpleText blur" onclick="phaseChanger('phase2')">PRESS START BUTTON</span>        
             <div class="Character">
             
-            <img class="Character_spritesheet pixelart face-down" src="/img/Run.png"  alt="Character" />
+            <img class="Character_spritesheet pixelart face-down" src="/img/Run.png"  alt="Character"/>
             </div>
     </section>
 
@@ -24,14 +24,20 @@
     <!-- SECTION TO CHOOSE THE FIGHTERS OF EACH TEAM -->
 
     <section class="secvis gradient" id="phase2" style="display:none">
-    
-        <div class="fightersSelectionScreen">
-            <div class="avatar" id="1" onclick="chooseFighter(1)"><img class="picFighter" src="img/Neo.jfif"></div>
-            <div class="avatar" id="2" onclick="chooseFighter(2)"><img class="picFighter" src="img/Axel.jfif"></div>
-            <div class="avatar" id="3" onclick="chooseFighter(3)"><img class="picFighter" src="img/Donatello.jfif"></div>
-            <div class="avatar" id="4" onclick="chooseFighter(4)"><img class="picFighter" src="img/Goku.jfif"></div>
-            <div class="avatar" id="5" onclick="chooseFighter(5)"><img class="picFighter" src="img/Chuck Norris.jfif"></div>
-            <div class="avatar" id="6" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
+        <div class="selectionDiv">
+            <div class="bigFighter" id="previewLeft"></div>
+            <div class="bigFighter" id="previewCenter">
+                <span class="simpleText">These are the greatest heros in the universe, convince them to join your team and lead them to the victory.</span>
+                <div class="fightersSelectionScreen">
+                    <div class="avatar" id="1" onclick="chooseFighter(1)" onmouseover="preview(1)" onmouseout="outPreview()"><img class="picFighter" src="img/Neo.jfif"></div>
+                    <div class="avatar" id="2" onclick="chooseFighter(2)" onmouseover="preview(2)" onmouseout="outPreview()"><img class="picFighter" src="img/Axel.jfif"></div>
+                    <div class="avatar" id="3" onclick="chooseFighter(3)" onmouseover="preview(3)" onmouseout="outPreview()"><img class="picFighter" src="img/Donatello.jfif"></div>
+                    <div class="avatar" id="4" onclick="chooseFighter(4)" onmouseover="preview(4)" onmouseout="outPreview()"><img class="picFighter" src="img/Goku.jfif"></div>
+                    <div class="avatar" id="5" onclick="chooseFighter(5)" onmouseover="preview(5)" onmouseout="outPreview()"><img class="picFighter" src="img/Chuck Norris.jfif"></div>
+                    <div class="avatar" id="6" onclick="chooseFighter(6)" onmouseover="preview(6)" onmouseout="outPreview()"><img class="picFighter" src="img/Pikachu.jfif"></div>
+                </div>
+            </div>
+            <div class="bigFighter simpleText" id="previewRight">3</div>
         </div>
 
     </section>
@@ -51,29 +57,29 @@
                 <div class="lifeBarP1" id="fighter1Hit"></div>
                 </div>
                 <div><img class="scenarioFight" id="leftPlayer" alt="luchador1"></div>
-                <span class="textoBasico" id="vidaP1"></span> 
+                <span class="simpleText" id="vidaP1"></span> 
         
             </div>
             <div class="teamCharacters">
-            <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
+            <div class="fightPanel" alt="lucha"></div>
             </div>
             <div class="teamCharacters">
                 <div class="lifeBar">
                 <div class="lifeBarP2" id="fighter2Hit"></div>
                 </div>
                 <div><img class="scenarioFight" id="rightPlayer" alt="luchador2"></div>
-                <span class="textoBasico" id="vidaP2"></span>
+                <span class="simpleText" id="vidaP2"></span>
                 
             </div>
         </div>
     </section>
 
     <section class="secvis gradient" id="phase5" style="display:none">
-        <!-- <span class="textoBasico">ESTOY EN LA phase 5!!!</span> -->
+        <!-- <span class="simpleText">ESTOY EN LA phase 5!!!</span> -->
         
-        <div class="winnerScreen">    
-        <div class="winnerScreen textoBasico" id="winner"></div>
-            <span class="textoBasico" id="playAgain">Do you want to play again?</span>
+        <div class="winnerDiv">    
+        <div class="winnerScreen simpleText" id="winner"></div>
+            <span class="simpleText" id="playAgain">Do you want to play again?</span>
 
         </div>
     </section>

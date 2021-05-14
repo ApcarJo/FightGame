@@ -162,7 +162,7 @@ const fighting1 = () => {
        
         
         let vidaP2 = document.getElementById("vidaP2");
-        vidaP2.innerHTML = `${team2[j].nombre} : ${p2.vida}`;
+        vidaP2.innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
         let lifeBar1 = document.getElementById("fighter2Hit");
         lifeBar1.style.width = team2[j].vida*0.0066+1+ "em";
         console.log("esto vale", lifeBar1.style.width);
@@ -234,10 +234,11 @@ const fighting2 = () => {
 
         /* Update life status after each hit */
         let vidaP1 = document.getElementById("vidaP1");
-        vidaP1.innerHTML = `${team1[i].nombre} : ${p1.vida}`;
+        vidaP1.innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
         let lifeBar = document.getElementById("fighter1Hit");
         lifeBar.style.width = team1[i].vida*0.0066+1 + "em";
         console.log(lifeBar.style.width);
+    
         
         // let vidaP2 = document.getElementById("vidaP2");
         // vidaP2.innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
@@ -259,7 +260,7 @@ const fighting2 = () => {
 };
 
 
-const hit = (i, j) => {
+const animationHit = (i, j) => {
     let lucha = document.getElementById("lucha");
     lucha.innerHTML = `
     <div class="teamCharacters">

@@ -154,6 +154,7 @@ body{
     width: 20em;
     background-color: greenyellow;
     border: solid 0.2em black;
+    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 }
 .lifeBarP2{
@@ -161,6 +162,7 @@ body{
     width: 20em;
     background-color: hotpink;
     border: solid 0.3em black;
+    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 }
 
@@ -169,8 +171,7 @@ body{
     align-items: center;
     height: 5em;
     width: 20em;
-    background-color: rgb(2, 196, 255);
-    
+    background-color: rgb(255, 0, 0);   
 
 }
 

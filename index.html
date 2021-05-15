@@ -22,7 +22,7 @@
 
     <section class="secvis gradient" id="phase1" style="display:none">
         <divc class="startBox">
-            <span class="simpleText shadow_text" id="startGame" onclick="phaseChanger('phase2')">PRESS START BUTTON</span>   
+            <span class="simpleText shadow_text" id="startGame" onclick="constructordiv(36)">PRESS START BUTTON</span>   
         </div>     
         
     </section>
@@ -33,20 +33,9 @@
         <div class="selectionDiv">
             <div class="bigFighter" id="previewLeft"></div>
             <div class="bigFighter" id="previewCenter">
-                <span class="simpleText">These are the greatest heros in the universe, convince them to join your team and lead them to the victory.<br></span>
-                <div class="fightersSelectionScreen">
-                    <div class="avatar" id="1" onclick="chooseFighter(1)" onmouseover="preview(1)" onmouseout="outPreview()"><img class="picFighter" src="img/Neo.jfif"></div>
-                    <div class="avatar" id="2" onclick="chooseFighter(2)" onmouseover="preview(2)" onmouseout="outPreview()"><img class="picFighter" src="img/Axel.jfif"></div>
-                    <div class="avatar" id="3" onclick="chooseFighter(3)" onmouseover="preview(3)" onmouseout="outPreview()"><img class="picFighter" src="img/Donatello.jfif"></div>
-                    <div class="avatar" id="4" onclick="chooseFighter(4)" onmouseover="preview(4)" onmouseout="outPreview()"><img class="picFighter" src="img/Goku.jfif"></div>
-                    <div class="avatar" id="5" onclick="chooseFighter(5)" onmouseover="preview(5)" onmouseout="outPreview()"><img class="picFighter" src="img/Chuck Norris.jfif"></div>
-                    <div class="avatar" id="6" onclick="chooseFighter(6)" onmouseover="preview(6)" onmouseout="outPreview()"><img class="picFighter" src="img/Pikachu.jfif"></div>
-                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
-                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
-                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
-                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
-                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
-                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
+                <!-- <span class="simpleText"></span> -->
+                <div class="fightersSelectionScreen" id="creationList">
+                <!-- Y AQUÍ LLEGA LA MAGIA DESDE MAIN.JS Y LA FUNCIÓN CONSTRUCTORDIV     -->
                 </div>
             </div>
             <div class="bigFighter simpleText" id="previewRight">

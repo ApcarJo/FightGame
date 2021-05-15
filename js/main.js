@@ -5,21 +5,26 @@ let p2 = "";
 
 let i=0, j=0;
 
+// setTimeout(() => {document.getElementById("titles").classList.add(opacityChange);},2000);
 
-setTimeout(() => {
-    document.getElementById("titles").style.opacity = "1";
-}, this.animationDelay + 20000);  
+const constructordiv = (number) => {
+    let creator = document.getElementById("creationList");
+    for(let k=1; k<=number; k++){
 
-
-
-const animationMenu = () => {
-    onclick="phaseChanger('phase1')"
+        creator.innerHTML += `
+        <div class="avatar" id="${k}" onclick="chooseFighter(${k})" onmouseover="preview(${k})" onmouseout="outPreview()"><img class="picFighter" src="img/Marvel/${allPlayers[k].name}.png"></div>`;
+        console.log(allPlayers[k].name);
+        console.log(creator.id)
+    }
+    phaseChanger('phase2')
 }
+
 // Function to forward to the next phase
 const phaseChanger = (destino) =>{
     let arrphase = ["phaseTitles","phase1", "phase2", "phase3", "phase4", "phase5"];
     arrphase = arrphase.filter(val => !destino.includes(val));
     document.getElementById(destino).style.display = "block";
+
 
     for (let _phase of arrphase){
         document.getElementById(_phase).style.display = "none";
@@ -54,19 +59,19 @@ const chooseFighter = (fighter) => {
 
 const preview = (a) => {
     let prevL = document.getElementById("previewLeft");
-    prevL.innerHTML = `<div><img src="img/avatar${a}.jfif" alt="previewL"></div>`;
+    prevL.innerHTML = `<div><img class="photoSize" src="img/Marvel/${allPlayers[a].name}.png" alt="previewL"></div>`;
+    let str = allPlayers[a];
     // prevL.style.backgroundImage = `linear-gradient(to bottom, black, transparent,  black), linear-gradient(to left,black, transparent, black)`;
     let prevR = document.getElementById("previewRight");
-    let str = (allPlayers[a]);
     prevR.innerHTML = `<div><span>${str.name}<br>Attack ${str.strength}<br>Defense ${str.defense}<br>Skill ${str.skill}<br>Agility ${str.agility}</span></div>`;
     // prevR.style.backgroundImage = `radial-gradient(transparent, black 50%)`;
     console.log(allPlayers[a]);
 };
 
 const outPreview = () => {
-    let prevL = document.getElementById("previewLeft");
-    prevL.innerHTML = "";
-    prevL.style.backgroundImage = ``;
+    // let prevL = document.getElementById("previewLeft");
+    // prevL.innerHTML = "";
+    // prevL.style.backgroundImage = ``;
     let prevR = document.getElementById("previewRight");
     prevR.innerHTML = "";
     prevR.style.backgroundImage = ``;
@@ -79,11 +84,13 @@ const showBothTeams = () => {
     <div class="teamCharacters">
         <div><img class="picFighter" src="img/${team1[0].name}.jfif" alt="luchador1"></div>
         <div><img class="picFighter" src="img/${team1[1].name}.jfif" alt="luchador2"></div>
+        <div><img class="picFighter" src="img/${team1[2].name}.jfif" alt="luchador3"></div>
     </div>
     <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
     <div class="teamCharacters">
-        <div><img class="picFighter" src="img/${team2[0].name}.jfif" alt="luchador3"></div>
-        <div><img class="picFighter" src="img/${team2[1].name}.jfif" alt="luchador4"></div>
+        <div><img class="picFighter" src="img/${team2[0].name}.jfif" alt="luchador4"></div>
+        <div><img class="picFighter" src="img/${team2[1].name}.jfif" alt="luchador5"></div>
+        <div><img class="picFighter" src="img/${team2[2].name}.jfif" alt="luchador6"></div>
     </div>`;
     
 };

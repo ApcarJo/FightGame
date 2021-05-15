@@ -174,12 +174,11 @@ body{
     justify-content: center;
     align-items: center;
     align-self: center;
-    width: 6em;
-    height: 6em;
+    width: auto;
+    height: auto;
     border-radius: 50%;
     transition: 1s;
     margin: 0.4em;
- 
 }
 
 .picFighter{

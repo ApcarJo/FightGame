@@ -12,9 +12,10 @@ const constructordiv = (number) => {
     for(let k=1; k<=number; k++){
 
         creator.innerHTML += `
-        <div class="avatar" id="${k}" onclick="chooseFighter(${k})" onmouseover="preview(${k})" onmouseout="outPreview()"><img class="picFighter" src="img/Marvel/${allPlayers[k].name}.png"></div>`;
+        <div class="avatar foto" id="${k}" onclick="chooseFighter(${k})" onmouseover="preview(${k})" onmouseout="outPreview()"><img class="picFighter" src="img/Marvel/${allPlayers[k].name}.png"></div>`;
         console.log(allPlayers[k].name);
-        console.log(creator.id)
+        console.log(creator.id);
+        console.log(allPlayers.length);
     }
     phaseChanger('phase2')
 }
@@ -34,14 +35,14 @@ const phaseChanger = (destino) =>{
 // function to choose 2 fighters and add them to each team with a push method
 const chooseFighter = (fighter) => {
 
-    if (team2.length<2){
-        if(team1.length <2){
+    if (team2.length<3){
+        if(team1.length <3){
             team1.push(allPlayers[fighter]);
         } else {
             team2.push(allPlayers[fighter]); 
 
             // Once we have 2 fighters in each team, we call a function to show them on screen 
-            if (team2.length == 2){
+            if (team2.length == 3){
                 showBothTeams();
                 phaseChanger("phase3");
 
@@ -82,15 +83,15 @@ const showBothTeams = () => {
     let teams = document.getElementById("teams");
     teams.innerHTML = `
     <div class="teamCharacters">
-        <div><img class="picFighter" src="img/${team1[0].name}.jfif" alt="luchador1"></div>
-        <div><img class="picFighter" src="img/${team1[1].name}.jfif" alt="luchador2"></div>
-        <div><img class="picFighter" src="img/${team1[2].name}.jfif" alt="luchador3"></div>
+        <div><img class="picFighter" src="img/Marvel/${team1[0].name}.png" alt="luchador1"></div>
+        <div><img class="picFighter" src="img/Marvel/${team1[1].name}.png" alt="luchador2"></div>
+        <div><img class="picFighter" src="img/Marvel/${team1[2].name}.png" alt="luchador3"></div>
     </div>
     <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
     <div class="teamCharacters">
-        <div><img class="picFighter" src="img/${team2[0].name}.jfif" alt="luchador4"></div>
-        <div><img class="picFighter" src="img/${team2[1].name}.jfif" alt="luchador5"></div>
-        <div><img class="picFighter" src="img/${team2[2].name}.jfif" alt="luchador6"></div>
+        <div><img class="picFighter" src="img/marvel/${team2[0].name}.png" alt="luchador4"></div>
+        <div><img class="picFighter" src="img/marvel/${team2[1].name}.png" alt="luchador5"></div>
+        <div><img class="picFighter" src="img/marvel/${team2[2].name}.png" alt="luchador6"></div>
     </div>`;
     
 };
@@ -99,14 +100,14 @@ const showBothTeams = () => {
 
 const scenarioFight = (i, j) => {
     let leftPlayer1 = document.getElementById("leftPlayer");
-    leftPlayer1.src=`img/${team1[i].name}.jfif`;
+    leftPlayer1.src=`img/Marvel/${team1[i].name}.png`;
         
     let lifeP1 = document.getElementById("vidaP1");
     lifeP1.innerHTML = `${team1[i].name} : ${team1[i].vida}`;
 
 
     let rightPlayer1 = document.getElementById("rightPlayer");
-    rightPlayer1.src=`img/${team2[j].name}.jfif`;
+    rightPlayer1.src=`img/Marvel/${team2[j].name}.png`;
     let lifeP2 = document.getElementById("vidaP2");
     lifeP2.innerHTML = `${team2[j].name} : ${team2[j].vida}`;
 };

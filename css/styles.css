@@ -211,13 +211,12 @@ body{
 }
 
 .scenarioFight{
-    width: 12em;
-    height: 12em;
-    border: solid 0.1em white;
+    width: auto;
+    height: 20em;
+    /* border: solid 0.1em white; */
     margin: 1em;
     transition: 0.5s;
 
-    border-radius: 100%;
 }
 
 /* Selected Fighter */
@@ -271,22 +270,11 @@ body{
     /* background-color: yellow; */
 }
 
-.fightPanel{
-    height: 30em;
-    width: 30em;
-    margin: 2em;
-}
-
-.fotoVersus{
-    width: 30em;
-    height: 18em;
-}
-
 /* LIFE BAR */
 .lifeBarP1{
     height: 100%;
     width: 40em;
-    background-color: greenyellow;
+    background-color: green;
     border: solid 0.2em black;
     transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
@@ -294,7 +282,7 @@ body{
 .lifeBarP2{
     height: 100%;
     width: 40em;
-    background-color: hotpink;
+    background-color: green;
     border: solid 0.3em black;
     transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 

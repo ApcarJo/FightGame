@@ -23,10 +23,43 @@ body{
     justify-content: center;
     width: 100vw;
     height: 100vh;
+
+    background: linear-gradient(-45deg, #ffffff, #acacac, #dcdcdc, #646464);
+	background-size: 400% 400%;
+	animation: gradientAni 15s ease infinite;
+}
+
+.startBox{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#titles{
+    opacity: 0;
 }
 
 .gradient{
-    background-image: linear-gradient(blue, orange);
+    /* background-image: linear-gradient(45deg, rgb(255, 255, 255), rgb(184, 184, 184), white); */
+}
+
+.shadow_text{
+    
+    font-weight: 100em;
+    text-shadow: 0em 0em 0em black;
+    transition: 0.2s;
+}
+
+.shadow_text:hover{
+    color: rgb(255, 255, 255);
+    /* font-size: 3.8em; */
+    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    text-shadow: 0em 0.2em 0.1em black;
+    margin-top: -0.2em;
 }
 
 /* Text Style */
@@ -161,12 +194,14 @@ body{
     height: 6em;
     border-radius: 50%;
 
+
     /* transform:skew(-30deg) */
 }
 
 .picFighter:hover{
-    transition:0.2s cubic-bezier(1, 0, 0, 1);
-    box-shadow: 0em 0em 2em 0.005em rgb(255, 254, 248);
+    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    box-shadow: 0.1em 1em 0.5em rgb(29, 29, 29);
+    margin-top: -0.2em;
     
 }
 
@@ -327,6 +362,24 @@ body{
     }
  }
 
+ @keyframes gradientAni {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes titles {
+    0%   {opacity:1}
+        50%  {opacity:0}
+    100%  {opacity:1}
+    
+}
  .statsBox{
     display: flex;
     justify-content: center;

@@ -14,11 +14,16 @@
         <img class="Character_spritesheet pixelart face-down" src="/img/Run.png"  alt="Character">
         </div> -->
 
-    <!-- SETCION TO START THE GAME -->
+    <!-- SECTION TO START THE GAME -->
+    <section class="secvis gradient" id="phaseTitles">
+        <span class="simpleText" id="titles"onclick="phaseChanger('phase1')">Game made by José Luis Aparicio</span>        
+        
+    </section>
 
-
-    <section class="secvis gradient" id="phase1">
-        <span class="simpleText blur" id="startGame" onclick="phaseChanger('phase2')">PRESS START BUTTON</span>        
+    <section class="secvis gradient" id="phase1" style="display:none">
+        <divc class="startBox">
+            <span class="simpleText shadow_text" id="startGame" onclick="phaseChanger('phase2')">PRESS START BUTTON</span>   
+        </div>     
         
     </section>
 

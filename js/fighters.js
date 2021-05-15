@@ -31,7 +31,7 @@ let player5 = new Fighter("capi", 31, 13, 14, 9, 20);
 let player6 = new Fighter("deadpool", 28, 10, 5, 20, 9);
 let player7 = new Fighter("domino", 28, 10, 5, 20, 9);
 let player8 = new Fighter("yondu", 28, 10, 5, 20, 9);
-let player9 = new Fighter("fate", 28, 10, 5, 20, 9);
+let player9 = new Fighter("kaecilius", 28, 10, 5, 20, 9);
 let player10 = new Fighter("gamora", 28, 10, 5, 20, 9);
 let player11 = new Fighter("groot", 28, 10, 5, 20, 9);
 let player12 = new Fighter("hawkeye", 28, 10, 5, 20, 9);
@@ -58,7 +58,6 @@ let player32 = new Fighter("valkyre", 28, 10, 5, 20, 9);
 let player33 = new Fighter("vision", 28, 10, 5, 20, 9);
 let player34 = new Fighter("wasp", 28, 10, 5, 20, 9);
 let player35 = new Fighter("wsoldier", 28, 10, 5, 20, 9);
-// let player36 = new Fighter("yondu", 28, 10, 5, 20, 9);
 let player36 = new Fighter("hulk", 28, 10, 5, 20, 9);
 
 

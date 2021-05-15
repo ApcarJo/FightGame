@@ -22,7 +22,7 @@ const constructordiv = (number) => {
 
 // Function to forward to the next phase
 const phaseChanger = (destino) =>{
-    let arrphase = ["phaseTitles","phase1", "phase2", "phase3", "phase4", "phase5"];
+    let arrphase = ["phase0","phase1", "phase2", "phase3", "phase4", "phase5"];
     arrphase = arrphase.filter(val => !destino.includes(val));
     document.getElementById(destino).style.display = "block";
 
@@ -82,16 +82,16 @@ const outPreview = () => {
 const showBothTeams = () => {
     let teams = document.getElementById("teams");
     teams.innerHTML = `
-    <div class="teamCharacters">
-        <div><img class="picFighter" src="img/Marvel/${team1[0].name}.png" alt="luchador1"></div>
-        <div><img class="picFighter" src="img/Marvel/${team1[1].name}.png" alt="luchador2"></div>
-        <div><img class="picFighter" src="img/Marvel/${team1[2].name}.png" alt="luchador3"></div>
+    <div class="teamCharacters1">
+        <div><img class="picFighter1" src="img/Marvel/${team1[0].name}.png" alt="luchador1"></div>
+        <div><img class="picFighter1" src="img/Marvel/${team1[1].name}.png" alt="luchador2"></div>
+        <div><img class="picFighter1" src="img/Marvel/${team1[2].name}.png" alt="luchador3"></div>
     </div>
     <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
-    <div class="teamCharacters">
-        <div><img class="picFighter" src="img/marvel/${team2[0].name}.png" alt="luchador4"></div>
-        <div><img class="picFighter" src="img/marvel/${team2[1].name}.png" alt="luchador5"></div>
-        <div><img class="picFighter" src="img/marvel/${team2[2].name}.png" alt="luchador6"></div>
+    <div class="teamCharacters1">
+        <div><img class="picFighter1" src="img/marvel/${team2[0].name}.png" alt="luchador4"></div>
+        <div><img class="picFighter1" src="img/marvel/${team2[1].name}.png" alt="luchador5"></div>
+        <div><img class="picFighter1" src="img/marvel/${team2[2].name}.png" alt="luchador6"></div>
     </div>`;
     
 };
@@ -114,13 +114,11 @@ const scenarioFight = (i, j) => {
 
 
 const fighting1 = () => {
-    p1 = team1[i];
+        p1 = team1[i];
         p2 = team2[j];
-        console.log("Lucha!!!");
-
         p1.hit(p2);
         
-        if (p2.vida<=0 && j<1) {
+        if (p2.vida<=0 && j<2) {
             j++;
             document.getElementById("vidaP2").innerHTML = `${team2[j].name} : ${team2[j].vida}`;
             scenarioFight(i, j);
@@ -137,15 +135,11 @@ const fighting1 = () => {
 };
 
 const fighting2 = () => {
-
     p1 = team1[i];
     p2 = team2[j];
-    console.log("Lucha!!!");
-
     p2.hit(p1);
-
-    
-    if (p1.vida<=0 && i<1) {
+ 
+    if (p1.vida<=0 && i<2) {
         i++;
         document.getElementById("vidaP1").innerHTML = `${team1[i].name} : ${team1[i].vida}`;
         scenarioFight(i, j);
@@ -163,7 +157,7 @@ const fighting2 = () => {
 };
 
 const finishFight = (i,j) => {
-    if ((team1[i].vida<=0 && i==1) || (team2[j].vida<=0 && j==1)){
+    if ((team1[i].vida<=0 && i==2) || (team2[j].vida<=0 && j==2)){
         let winner = document.getElementById("winner");
 
         if (team1[i].vida<=0 && team2[j].vida<=0) { 
@@ -171,12 +165,12 @@ const finishFight = (i,j) => {
 
         } else if (team2[j].vida<=0) {
             winner.innerHTML = `
-            <img  src="img/${team1[i].name}.jfif">
+            <img src="img/Marvel/${team1[i].name}.png">
             ${team1[i].name} has WON!!`;    
             
         } else{
             winner.innerHTML = `
-            <img  src="img/${team2[j].name}.jfif">
+            <img src="img/Marvel/${team2[j].name}.png">
             ${team2[j].name} has WON!!`;
         }
     
@@ -188,13 +182,13 @@ const finishFight = (i,j) => {
 
 document.body.onkeydown = (e) =>{
     if(e.keyCode == 81){
-        for (let a=1; a<=4; a++){
-            (function (a) {
-                setTimeout(function () {
-                    document.getElementById("leftPlayer").src=`img/MH2_Attack/Attack${a}.png`;
-                }, 75*a);
-              })(a);
-        }
+        // for (let a=1; a<=4; a++){
+        //     (function (a) {
+        //         setTimeout(function () {
+        //             document.getElementById("leftPlayer").src=`img/MH2_Attack/Attack${a}.png`;
+        //         }, 75*a);
+        //       })(a);
+        // }
         fighting1();
     }
 

@@ -9,17 +9,18 @@
     <link href="css/styles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
+    <!-- <div class="Character">
+        
+        <img class="Character_spritesheet pixelart face-down" src="/img/Run.png"  alt="Character">
+        </div> -->
 
     <!-- SETCION TO START THE GAME -->
 
-    <section class="secvis gradient" id="phase1">
-            <span class="simpleText blur" onclick="phaseChanger('phase2')">PRESS START BUTTON</span>        
-            <div class="Character">
-            
-            <img class="Character_spritesheet pixelart face-down" src="/img/Run.png"  alt="Character"/>
-            </div>
-    </section>
 
+    <section class="secvis gradient" id="phase1">
+        <span class="simpleText blur" id="startGame" onclick="phaseChanger('phase2')">PRESS START BUTTON</span>        
+        
+    </section>
 
     <!-- SECTION TO CHOOSE THE FIGHTERS OF EACH TEAM -->
 
@@ -27,7 +28,7 @@
         <div class="selectionDiv">
             <div class="bigFighter" id="previewLeft"></div>
             <div class="bigFighter" id="previewCenter">
-                <span class="simpleText">These are the greatest heros in the universe, convince them to join your team and lead them to the victory.</span>
+                <span class="simpleText">These are the greatest heros in the universe, convince them to join your team and lead them to the victory.<br></span>
                 <div class="fightersSelectionScreen">
                     <div class="avatar" id="1" onclick="chooseFighter(1)" onmouseover="preview(1)" onmouseout="outPreview()"><img class="picFighter" src="img/Neo.jfif"></div>
                     <div class="avatar" id="2" onclick="chooseFighter(2)" onmouseover="preview(2)" onmouseout="outPreview()"><img class="picFighter" src="img/Axel.jfif"></div>
@@ -35,9 +36,33 @@
                     <div class="avatar" id="4" onclick="chooseFighter(4)" onmouseover="preview(4)" onmouseout="outPreview()"><img class="picFighter" src="img/Goku.jfif"></div>
                     <div class="avatar" id="5" onclick="chooseFighter(5)" onmouseover="preview(5)" onmouseout="outPreview()"><img class="picFighter" src="img/Chuck Norris.jfif"></div>
                     <div class="avatar" id="6" onclick="chooseFighter(6)" onmouseover="preview(6)" onmouseout="outPreview()"><img class="picFighter" src="img/Pikachu.jfif"></div>
+                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
+                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
+                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
+                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
+                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
+                    <div class="avatar" id="7" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
                 </div>
             </div>
-            <div class="bigFighter simpleText" id="previewRight">3</div>
+            <div class="bigFighter simpleText" id="previewRight">
+                <div class="circleStatsBox">
+                    <div class="statsBox">
+                        <div class="stats"></div>
+                        <div class="stats" id="p"></div>
+                        <div class="stats"></div>
+                    </div>
+                    <div class="statsBox">
+                        <div class="stats" id="lft"></div>
+                        <div class="stats"></div>
+                        <div class="stats" id="rght"></div>
+                    </div>
+                    <div class="statsBox">
+                        <div class="stats"></div>
+                        <div class="stats" id="dwn"></div>
+                        <div class="stats"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>

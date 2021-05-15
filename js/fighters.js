@@ -1,24 +1,24 @@
 
 class Fighter{
 
-    constructor(nombre, ataque, defensa, tecnica, agilidad){
+    constructor(name, strength, defense, skill, agility){
 
         this.vida = 5000;
-        this.agilidad = agilidad;
-        this.nombre = nombre;
-        this.ataque = ataque;
-        this.defensa = defensa;
-        this.tecnica = tecnica;
+        this.agility = agility;
+        this.name = name;
+        this.strength = strength;
+        this.defense = defense;
+        this.skill = skill;
     }
 
     hit(enemy){
-        // enemy.vida -= this.ataque - (enemy.defensa);
-        enemy.vida -= (this.ataque*this.agilidad) - (enemy.defensa * enemy.tecnica);
+        // enemy.vida -= this.strength - (enemy.defense);
+        enemy.vida -= (this.strength*this.agility) - (enemy.defense * enemy.skill);
     }
 
     specialHit(enemy){
-        // enemy.vida -= this.ataque + this.tecnica;
-        // enemy.vida -= (this.ataque + this.tecnica -  (enemy.defensa * (enemy.agilidad / this.velocidad)));
+        // enemy.vida -= this.strength + this.skill;
+        // enemy.vida -= (this.strength + this.skill -  (enemy.defense * (enemy.agility / this.velocidad)));
     }
 }
 

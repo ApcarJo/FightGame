@@ -47,17 +47,19 @@ const preview = (a) => {
     prevL.innerHTML = `<div><img src="img/avatar${a}.jfif" alt="previewL"></div>`;
     prevL.style.backgroundImage = `linear-gradient(to bottom, black, transparent,  black), linear-gradient(to left,black, transparent, black)`;
     let prevR = document.getElementById("previewRight");
-    let str = JSON.stringify(allPlayers[a]);
-    prevR.innerHTML = `<div><span>${str}</span></div>`;
+    let str = (allPlayers[a]);
+    prevR.innerHTML = `<div><span>${str.name}<br>Attack ${str.strength}<br>Defense ${str.defense}<br>Skill ${str.skill}<br>Agility ${str.agility}</span></div>`;
+    prevR.style.backgroundImage = `radial-gradient(transparent, black 50%)`;
     console.log(allPlayers[a]);
 };
 
 const outPreview = () => {
-    let prev = document.getElementById("previewLeft");
-    prev.innerHTML = "";
-    prev.style.backgroundImage = `linear-gradient(to bottom, black, black)`;
+    let prevL = document.getElementById("previewLeft");
+    prevL.innerHTML = "";
+    prevL.style.backgroundImage = ``;
     let prevR = document.getElementById("previewRight");
     prevR.innerHTML = "";
+    prevR.style.backgroundImage = ``;
 }
 
 // Function to show both teams on html
@@ -65,13 +67,13 @@ const showBothTeams = () => {
     let teams = document.getElementById("teams");
     teams.innerHTML = `
     <div class="teamCharacters">
-        <div><img class="picFighter" src="img/${team1[0].nombre}.jfif" alt="luchador1"></div>
-        <div><img class="picFighter" src="img/${team1[1].nombre}.jfif" alt="luchador2"></div>
+        <div><img class="picFighter" src="img/${team1[0].name}.jfif" alt="luchador1"></div>
+        <div><img class="picFighter" src="img/${team1[1].name}.jfif" alt="luchador2"></div>
     </div>
     <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
     <div class="teamCharacters">
-        <div><img class="picFighter" src="img/${team2[0].nombre}.jfif" alt="luchador3"></div>
-        <div><img class="picFighter" src="img/${team2[1].nombre}.jfif" alt="luchador4"></div>
+        <div><img class="picFighter" src="img/${team2[0].name}.jfif" alt="luchador3"></div>
+        <div><img class="picFighter" src="img/${team2[1].name}.jfif" alt="luchador4"></div>
     </div>`;
     
 };
@@ -80,16 +82,16 @@ const showBothTeams = () => {
 
 const scenarioFight = (i, j) => {
     let leftPlayer1 = document.getElementById("leftPlayer");
-    leftPlayer1.src=`img/${team1[i].nombre}.jfif`;
+    leftPlayer1.src=`img/${team1[i].name}.jfif`;
         
     let lifeP1 = document.getElementById("vidaP1");
-    lifeP1.innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
+    lifeP1.innerHTML = `${team1[i].name} : ${team1[i].vida}`;
 
 
     let rightPlayer1 = document.getElementById("rightPlayer");
-    rightPlayer1.src=`img/${team2[j].nombre}.jfif`;
+    rightPlayer1.src=`img/${team2[j].name}.jfif`;
     let lifeP2 = document.getElementById("vidaP2");
-    lifeP2.innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
+    lifeP2.innerHTML = `${team2[j].name} : ${team2[j].vida}`;
 };
 
 
@@ -102,14 +104,14 @@ const fighting1 = () => {
         
         if (p2.vida<=0 && j<1) {
             j++;
-            document.getElementById("vidaP2").innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
+            document.getElementById("vidaP2").innerHTML = `${team2[j].name} : ${team2[j].vida}`;
             scenarioFight(i, j);
         }
 
         (p2.vida<0) ? p2.vida=0 : console.log("");
           
         let vidaP2 = document.getElementById("vidaP2");
-        vidaP2.innerHTML = `${team2[j].nombre} : ${team2[j].vida}`;
+        vidaP2.innerHTML = `${team2[j].name} : ${team2[j].vida}`;
         let lifeBar1 = document.getElementById("fighter2Hit");
         lifeBar1.style.width = team2[j].vida*0.008 + "em";
 
@@ -127,7 +129,7 @@ const fighting2 = () => {
     
     if (p1.vida<=0 && i<1) {
         i++;
-        document.getElementById("vidaP1").innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
+        document.getElementById("vidaP1").innerHTML = `${team1[i].name} : ${team1[i].vida}`;
         scenarioFight(i, j);
     }
 
@@ -135,7 +137,7 @@ const fighting2 = () => {
 
     /* Update life status after each hit */
     let vidaP1 = document.getElementById("vidaP1");
-    vidaP1.innerHTML = `${team1[i].nombre} : ${team1[i].vida}`;
+    vidaP1.innerHTML = `${team1[i].name} : ${team1[i].vida}`;
     let lifeBar = document.getElementById("fighter1Hit");
     lifeBar.style.width = team1[i].vida*0.008 + "em";
 
@@ -151,13 +153,13 @@ const finishFight = (i,j) => {
 
         } else if (team2[j].vida<=0) {
             winner.innerHTML = `
-            <img  src="img/${team1[i].nombre}.jfif">
-            ${team1[i].nombre} has WON!!`;    
+            <img  src="img/${team1[i].name}.jfif">
+            ${team1[i].name} has WON!!`;    
             
         } else{
             winner.innerHTML = `
-            <img  src="img/${team2[j].nombre}.jfif">
-            ${team2[j].nombre} has WON!!`;
+            <img  src="img/${team2[j].name}.jfif">
+            ${team2[j].name} has WON!!`;
         }
     
         setTimeout(()=> {

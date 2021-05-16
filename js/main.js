@@ -59,7 +59,9 @@ const preview = (a) => {
     let prevL = document.getElementById("previewLeft");
     prevL.innerHTML = `<div><img class="photoSize" src="img/Marvel/${allPlayers[a].name}.png" alt="previewL"></div>`;
     let str = allPlayers[a];
-    
+   
+    document.getElementById("nameStats").innerHTML = `<div><span>${str.name}</span></div>`;
+   
     document.getElementById("Str").style.width = `${str.strength/25*100}%`;
     document.getElementById("Def").style.width = `${str.defense/15*100}%`;
     document.getElementById("Agi").style.width = `${str.agility/12*100}%`;

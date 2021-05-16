@@ -12,7 +12,7 @@
 
     <!-- SECTION TO START THE GAME -->
     <section class="secvis gradient" id="phase0">
-        <span class="titles" onclick="phaseChanger('phase1')">Game made by José Luis Aparicio</span>
+        <span class="titles" onmouseover="phaseChanger('phase1')">Game made by José Luis Aparicio</span>
 
         
     </section>
@@ -29,7 +29,8 @@
     <section class="secvis" id="phase2" style="display:none">
         <div class="selectionDiv">
             <div class="bigFighter" id="previewRight">
-                <span class="skillsText">STRENGTH</span>
+                <div class="skillsText" id="nameStats"></div>
+                <span class="skillsText" class="simpleText">STRENGTH</span>
                 <div class="statsBox">
                     <div class="stats shadowsBar" id="Str"></div>
                 </div>

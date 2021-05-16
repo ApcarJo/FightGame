@@ -438,6 +438,13 @@
     color: white;
     margin-left: 2.3em;
   }
+  #nameStats{
+    font-size: 7em;
+    margin-left: 0.7em;
+    z-index: 2;
+    margin-bottom: 0.5em;
+    
+  }
 
   #phase4{
       background-image: url(https://i.redd.it/5261b4tuxky21.jpg);

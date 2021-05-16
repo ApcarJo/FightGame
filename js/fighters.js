@@ -1,7 +1,11 @@
 
+
+
+    
+
 class Fighter{
 
-    constructor(name, strength, defense, skill, agility){
+    constructor(name, strength, defense, skill, agility, speed){
 
         this.vida = 5000;
         this.agility = agility;
@@ -9,11 +13,12 @@ class Fighter{
         this.strength = strength;
         this.defense = defense;
         this.skill = skill;
+        this.speed = speed;
     }
 
     hit(enemy){
         // enemy.vida -= this.strength - (enemy.defense);
-        enemy.vida -= (this.strength*this.agility) - (enemy.defense * enemy.skill);
+        enemy.vida -= (this.strength*this.skill) - (enemy.defense * enemy.agility);
     }
 
     specialHit(enemy){
@@ -23,6 +28,7 @@ class Fighter{
 }
 
 // Instancio luchadores
+
 let player1 = new Fighter("antman", 30, 15, 5, 20, 15);
 let player2 = new Fighter("blackpanther", 35, 12, 8, 12, 12);
 let player3 = new Fighter("blackwidow", 25, 20, 7, 15, 18);
@@ -35,14 +41,14 @@ let player9 = new Fighter("kaecilius", 28, 10, 5, 20, 9);
 let player10 = new Fighter("gamora", 28, 10, 5, 20, 9);
 let player11 = new Fighter("groot", 28, 10, 5, 20, 9);
 let player12 = new Fighter("hawkeye", 28, 10, 5, 20, 9);
-let player13 = new Fighter("heimdall", 28, 10, 5, 20, 9);
+let player13 = new Fighter("heimdall", 10, 5, 20, 9);
 let player14 = new Fighter("hella", 28, 10, 5, 20, 9);
 let player15 = new Fighter("ironman", 28, 10, 5, 20, 9);
 let player16 = new Fighter("loki", 28, 10, 5, 20, 9);
 let player17 = new Fighter("marvel", 28, 10, 5, 20, 9);
 let player18 = new Fighter("megasonic", 28, 10, 5, 20, 9);
 let player19 = new Fighter("minigroot", 28, 10, 5, 20, 9);
-let player20 = new Fighter("monguer", 28, 10, 5, 20, 9);
+let player20 = new Fighter("hulk", 28, 10, 5, 20, 9);
 let player21 = new Fighter("nebula", 28, 10, 5, 20, 9);
 let player22 = new Fighter("quicksilver", 28, 10, 5, 20, 9);
 let player23 = new Fighter("rocket", 28, 10, 5, 20, 9);
@@ -58,8 +64,12 @@ let player32 = new Fighter("valkyre", 28, 10, 5, 20, 9);
 let player33 = new Fighter("vision", 28, 10, 5, 20, 9);
 let player34 = new Fighter("wasp", 28, 10, 5, 20, 9);
 let player35 = new Fighter("wsoldier", 28, 10, 5, 20, 9);
-let player36 = new Fighter("hulk", 28, 10, 5, 20, 9);
 
+
+
+const getRandom = (min,max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+};
 
 let allPlayers = {
     "1" : player1,
@@ -97,6 +107,29 @@ let allPlayers = {
     "33" : player33,
     "34" : player34,
     "35" : player35,
-    "36" : player36
 
 }
+
+
+// let t=1;
+// do{
+//     console.log(allPlayers[1]);
+//     allPlayers[t].agility = getRandom(8, 12);
+//     allPlayers[t].strength = getRandom(20, 25);
+//     allPlayers[t].skill = getRandom(12, 20);
+//     allPlayers[t].defense = getRandom(10, 15);
+//     t++; 
+//     console.log(allPlayers[1]);
+// } while (t<=36)
+
+let t=1;
+do{
+        console.log(allPlayers[t]);
+        allPlayers[t].agility = getRandom(8, 12);
+        allPlayers[t].strength = getRandom(20, 25);
+        allPlayers[t].skill = getRandom(12, 20);
+        allPlayers[t].defense = getRandom(10, 15);
+        allPlayers[t].speed = getRandom(6, 10);
+        console.log(allPlayers[t]);
+        t++;
+} while (t<=35)

@@ -70,7 +70,7 @@ body{
     align-items: center;
     color: white;
     text-align: center;
-    font-size: 3vw;
+    font-size: 2.5vw;
 }
 
 .titles{
@@ -83,31 +83,26 @@ body{
 }
 
 /* Fight Screen and Scenario Styles */
-.fightScenario{
-    background-color: rgb(50, 231, 0);
-    height: 100vh;
-    width: 100vh;
-}
 
 .selectionDiv{
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: row;
 
     height: 100vh;
     width: 100vw;
+    z-index: 1;
 }
 
-.fightersSelectionScreen{
+#creationList{
 
     display: grid;
+
     align-items: center;
     justify-content: center;
     text-align: center;
 
-    height: 100%;
-    width: 20em;
+    height: 90vh;
+    width: 36vw;
 
     z-index: 1;
 
@@ -119,15 +114,6 @@ body{
     /* background-image: linear-gradient(to right, black, black); */
 }
 
-.bigFighter{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    width: 33%;
-    /* background-color: yellow; */
-}
 
 #previewLeft{
     /* box-sizing: border-box; */
@@ -137,13 +123,13 @@ body{
     align-items: center;
     height: 100vh;
     width: 34vw;
-
-    /* background-image: linear-gradient(to bottom, black, black); */
+    
     transition: 1s;
-
+    z-index: 1;
 }
+
 #previewRight{
-    box-sizing: content-box;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,23 +138,18 @@ body{
     width: 34vw;
     overflow: hidden;
     /* background-image: radial-gradient(black, black 50%); */
-    transition-duration: 1s;
     transition: 1s;
-    
-    /* background-image: linear-gradient(to bottom, black, transparent,  black), linear-gradient(to right, black, transparent, blue); */
-
+    z-index: 2;
 }
 
 #previewCenter{
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 32vw;
-
-    /* background-image: linear-gradient(to right, black, rgb(148, 148, 148), black); */
+     /* background-image: linear-gradient(to right, black, rgb(148, 148, 148), black); */
 
 }
 /* Pics of the fighters Style" */
@@ -178,26 +159,40 @@ body{
     font-size: 2em;
     padding: 1.5em;
 }
-.avatar{
-    display: grid;
+/* .avatar{
+    display: flex;
     justify-content: center;
     align-items: center;
     align-self: center;
-    width: auto;
-    height: auto;
     border-radius: 50%;
     transition: 1s;
-    margin: 0.4em;
-}
+    background-color: red;
+    height: 4em;
+} */
 
+.picBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100%;
+    
+    height: 8em;
+    width: 8em;
+    background-image: url(https://media3.giphy.com/media/3o7TKq6HIBAgUuBMv6/200.gif);
+    background-position: center;
+    background-size: 15em;
+    background-position-y: -4.5em;
+}
 .picFighter{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     transition: 0.5s;
     width: auto;
     height: 8em;
+    background-position: center;
+    /* background-image: url(https://media3.giphy.com/media/3o7TKq6HIBAgUuBMv6/200.gif); */
 
     /* transform:skew(-30deg) */
 }
@@ -213,26 +208,19 @@ body{
     /* transform:skew(-30deg) */
 }
 
-#leftPlayer{
-    height: 24em;
-    width: auto;
-}
 
-.picFighter:hover{
-    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+.picBox:hover{
+    box-sizing: border-box;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     box-shadow: 0.1em 1em 0.5em rgb(29, 29, 29);
     margin-top: -0.2em;
-    
+    border-radius: 100%;
 }
 
-.picFighter:hover #previewCenter{
-    background-image: linear-gradient(to right, black, rgb(170, 8, 8), black);
-    
-}
 
 .scenarioFight{
     width: auto;
-    height: 20em;
+    height: 50vh;
     /* border: solid 0.1em white; */
     margin: 1em;
     transition: 0.5s;
@@ -251,14 +239,15 @@ body{
 /* Team vs Team Screen */
 
 .teamVsTeamScreen{
+    box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
     flex-direction: row;
 
-    height: 100vh;
-    width: 100vw;
+    height: 80vh;
+    width: 80vw;
     color: white;
 
     /* background-color: green; */
@@ -283,10 +272,9 @@ body{
     align-items: center;
 
     flex-direction: column;
-    height: 80em;
-    width: 30em;
+    height: 80vh;
+    width: 40em;
     margin: 6em;
-
     /* background-color: yellow; */
 }
 
@@ -305,18 +293,18 @@ body{
 
 /* LIFE BAR */
 .lifeBarP1{
-    height: 100%;
+    height: 5vh;
     width: 40em;
     background-color: rgb(0, 95, 149);
-    border: solid 0.4em black;
+    border-right: solid 0.4em black;
     transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 }
 .lifeBarP2{
-    height: 100%;
+    height: 5vh;
     width: 40em;
     background-color: rgb(0, 95, 149);
-    border: solid 0.4em black;
+    border-right: solid 0.4em black;
     transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 }
@@ -324,8 +312,8 @@ body{
 .lifeBar{
     display: flex;
     align-items: center;
-    overflow: hidden;
-    height: 5em;
+
+    height: 5vh;
     width: 40em;
     background-color: rgb(255, 0, 0);
 
@@ -337,8 +325,7 @@ body{
     align-items: center;
 
     flex-direction: column;
-
-    height: 100%;
+    height: 100vh;
 
 }
 
@@ -346,9 +333,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-
     flex-direction: column;
-
+    height: 60vh;
+    width: auto;
 
 }
 
@@ -371,70 +358,65 @@ body{
     100%  {opacity:1}
     
 }
- .statsBox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 9em;
-    height: 1em;
+ #Str{
 
-    border-radius: 15%;
+    background-color: rgb(98, 48, 35);
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ }
+
+ #Agi{
+    background-color: rgb(255, 145, 0);
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ }
+
+ #Def{
+    background-color: rgb(255, 0, 0);
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ }
+
+ #Skl{
+    background-color: rgb(255, 238, 0);
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ }
+
+ #Spd{
+    background-color: rgb(30, 255, 0);
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
  }
 
  .stats{
- 
-     height: 1em;
-     width: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    width: 100vw;
+    height: 0.8em;
+    /* border: 0.01em solid rgb(255, 255, 255); */
+ }
+ .statsBox{
+    width: 50em;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: rgb(42, 42, 42);
+    border-radius: 0.5em;
+    box-shadow: inset 0em 0em 0.5em 0.02em rgb(0, 0, 0), 0em 0em 0.05em 0.05em darkgrey;
+    transform: rotate3d(0, 1, 0, 45deg);
  }
 
- .circleStatsBox{
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
-     height: 4em;
-     width: 4em;
-
-     background-color: yellow;
-     border-radius: 100%;
+ .shadowsBar{
+    /* box-shadow: -0.25em 0.05em 0.1em 0em rgb(29, 29, 29), 0em 0em 0.4em rgba(255, 255, 255, 0.068), inset 0em 0.05em 0.05em 0em white; */
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
  }
 
- #p{
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid red;
- }
-
- #lft{
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-right: 100px solid red;
-    border-bottom: 50px solid transparent;
-  }
-
-  #rght{
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-left: 100px solid red;
-    border-bottom: 50px solid transparent;
-  }
-
-  
-  #dwn{
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 70px solid red;
-    outline: 0.5em solid black;
-    outline-offset: 40em;
-  }
 
   .photoSize{
-      height: 60vh;
+      height: 80em;
       width: auto;
+  }
+
+  #phase2{
+      /* background-image: url(https://media3.giphy.com/media/3o7TKq6HIBAgUuBMv6/200.gif) */
+  }
+
+  .skillsText{
+    font-size: 1em;
+    color: white;
+    text-shadow: 0.05em 0.08em black;
   }

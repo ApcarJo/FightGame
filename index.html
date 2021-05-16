@@ -27,10 +27,33 @@
         
     </section>
 
+    <img src="img/Marvel/portals/giphy (1).gif">
     <!-- SECTION TO CHOOSE THE FIGHTERS OF EACH TEAM -->
 
     <section class="secvis gradient" id="phase2" style="display:none">
         <div class="selectionDiv">
+            <div class="bigFighter" id="previewRight">
+                <span class="skillsText">STRENGTH</span>
+                <div class="statsBox">
+                    <div class="stats shadowsBar" id="Str"></div>
+                </div>
+                <span class="skillsText"><br><br>DEFENSE</span>
+                <div class="statsBox">
+                    <div class="stats shadowsBar" id="Def"></div>
+                </div>
+                <span class="skillsText"><br><br>AGILITY</span>
+                <div class="statsBox">
+                    <div class="stats shadowsBar" id="Agi"></div>
+                </div>
+                <span class="skillsText"><br><br>SKILL</span>
+                <div class="statsBox">
+                    <div class="stats shadowsBar" id="Skl"></div>
+                </div>
+                <span class="skillsText"><br><br>SPEED</span>
+                <div class="statsBox">
+                    <div class="stats shadowsBar" id="Spd"></div>
+                </div>
+            </div>
             <div class="bigFighter" id="previewLeft"></div>
             <div class="bigFighter" id="previewCenter">
                 <!-- <span class="simpleText"></span> -->
@@ -38,25 +61,7 @@
                 <!-- Y AQUÍ LLEGA LA MAGIA DESDE MAIN.JS Y LA FUNCIÓN CONSTRUCTORDIV     -->
                 </div>
             </div>
-            <div class="bigFighter simpleText" id="previewRight">
-                <div class="circleStatsBox">
-                    <div class="statsBox">
-                        <div class="stats"></div>
-                        <div class="stats" id="p"></div>
-                        <div class="stats"></div>
-                    </div>
-                    <div class="statsBox">
-                        <div class="stats" id="lft"></div>
-                        <div class="stats"></div>
-                        <div class="stats" id="rght"></div>
-                    </div>
-                    <div class="statsBox">
-                        <div class="stats"></div>
-                        <div class="stats" id="dwn"></div>
-                        <div class="stats"></div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
 
     </section>
@@ -73,7 +78,7 @@
         <div class="teamVsTeamScreen" id="lucha">
             <div class="teamCharacters">
                 <div class="lifeBar">
-                <div class="lifeBarP1" id="fighter1Hit"></div>
+                    <div class="lifeBarP1" id="fighter1Hit"></div>
                 </div>
                 <div><img class="scenarioFight" id="leftPlayer" alt="luchador1"></div>
                 <span class="simpleText" id="vidaP1"></span> 
@@ -84,7 +89,7 @@
             </div>
             <div class="teamCharacters">
                 <div class="lifeBar">
-                <div class="lifeBarP2" id="fighter2Hit"></div>
+                    <div class="lifeBarP2" id="fighter2Hit"></div>
                 </div>
                 <div><img class="scenarioFight" id="rightPlayer" alt="luchador2"></div>
                 <span class="simpleText" id="vidaP2"></span>
@@ -97,9 +102,9 @@
         <!-- <span class="simpleText">ESTOY EN LA phase 5!!!</span> -->
         
         <div class="winnerDiv">    
-        <div class="winnerScreen simpleText" id="winner"></div>
-            <span class="simpleText" id="playAgain">Do you want to play again?</span>
-
+            <div class="winnerScreen simpleText" id="winner"></div>
+                <span class="simpleText" id="playAgain">Do you want to play again?</span>
+            </div>
         </div>
     </section>
 

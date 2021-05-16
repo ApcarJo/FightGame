@@ -12,7 +12,7 @@ const constructordiv = (number) => {
     for(let k=1; k<=number; k++){
 
         creator.innerHTML += `
-        <div class="avatar" id="${k}" onclick="chooseFighter(${k})" onmouseover="preview(${k})" onmouseout="outPreview()"><img class="picFighter" src="img/Marvel/${allPlayers[k].name}.png"></div>`;
+        <div class="avatar" id="${k}" onclick="chooseFighter(${k})" onmouseover="preview(${k})" onmouseout="outPreview()"><div class="picBox"><img class="picFighter" src="img/Marvel/${allPlayers[k].name}.png"></div></div>`;
         console.log(allPlayers[k].name);
         console.log(creator.id);
     }
@@ -61,19 +61,22 @@ const preview = (a) => {
     let prevL = document.getElementById("previewLeft");
     prevL.innerHTML = `<div><img class="photoSize" src="img/Marvel/${allPlayers[a].name}.png" alt="previewL"></div>`;
     let str = allPlayers[a];
-    // prevL.style.backgroundImage = `linear-gradient(to bottom, black, transparent,  black), linear-gradient(to left,black, transparent, black)`;
-    let prevR = document.getElementById("previewRight");
-    prevR.innerHTML = `<div><span>${str.name}<br>Attack ${str.strength}<br>Defense ${str.defense}<br>Skill ${str.skill}<br>Agility ${str.agility}</span></div>`;
+    
+    document.getElementById("Str").style.width = `${str.strength/25*100}%`;
+    document.getElementById("Def").style.width = `${str.defense/15*100}%`;
+    document.getElementById("Agi").style.width = `${str.agility/12*100}%`;
+    document.getElementById("Skl").style.width = `${str.skill/20*100}%`;
+    document.getElementById("Spd").style.width = `${str.speed/10*100}%`;
+
+    // let prevR = document.getElementById("previewRight");
+    // prevR.innerHTML = `<div><span>${str.name}<br>Attack ${str.strength}<br>Defense ${str.defense}<br>Skill ${str.skill}<br>Agility ${str.agility}</span></div>`;
     // prevR.style.backgroundImage = `radial-gradient(transparent, black 50%)`;
-    console.log(allPlayers[a]);
+    // console.log(allPlayers[a]);
 };
 
 const outPreview = () => {
-    // let prevL = document.getElementById("previewLeft");
-    // prevL.innerHTML = "";
-    // prevL.style.backgroundImage = ``;
     let prevR = document.getElementById("previewRight");
-    prevR.innerHTML = "";
+    // prevR.innerHTML = "";
     prevR.style.backgroundImage = ``;
 }
 
@@ -193,9 +196,19 @@ document.body.onkeydown = (e) =>{
 
     if(e.keyCode == 80){
         fighting2();
-
     }
 }
+
+document.body.onkeyup = (e) =>{
+    if(e.keyCode == 81){}
+    if(e.keyCode == 80){}
+}
+
+const reset = document.getElementById('playAgain');
+
+reset.addEventListener('click', () => {
+    window.location.reload();
+});
 
 //  setInterval(){
 //     for (let a=1; a<=4; a++){
@@ -208,21 +221,7 @@ document.body.onkeydown = (e) =>{
 // };
     //scenario(); Calling the function scenario.
 
-document.body.onkeyup = (e) =>{
-    if(e.keyCode == 81){
 
-    }
-
-    if(e.keyCode == 80){
-
-    }
-}
-
-const reset = document.getElementById('playAgain');
-
-reset.addEventListener('click', () => {
-    window.location.reload();
-})
 
 // calcular distancia entre 2 divs, usando coordenadas de cada div y restando una frente al otro, condicional x=div1pos-div2pos, if x<distanciamin && userpressHitButton, "puser1.hit(puser2)"
 

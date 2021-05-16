@@ -24,7 +24,6 @@
 
     background: linear-gradient(-45deg, #ffffff, #acacac, #dcdcdc, #646464);
 	background-size: 400% 400%;
-	animation: gradientAni 15s ease infinite;
 }
 
 .startBox{
@@ -44,6 +43,7 @@
 
 .gradient{
     /* background-image: linear-gradient(45deg, rgb(255, 255, 255), rgb(184, 184, 184), white); */
+    animation: gradientAni 15s ease infinite;
 }
 
 .shadow_text{
@@ -447,10 +447,16 @@
 
   #phase4{
       background-image: url(https://i.redd.it/5261b4tuxky21.jpg);
-      background-size: 100vh;
+      background-size: 200vh;
   }
 
   #phase3{
     background-image: url(https://i.pinimg.com/originals/e6/6a/8a/e66a8aa6e1edd8b5df5cfc4a354892bb.jpg);
-    background-size: 300em;
+    background-size: 200vh;
+  }
+
+  #phase2{
+    background-image: url(https://i.pinimg.com/originals/82/35/e0/8235e0cbe977081f095929067d7008bf.jpg);
+    background-size: 200vh;
+
   }

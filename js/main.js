@@ -5,8 +5,6 @@ let p2 = "";
 
 let i=0, j=0;
 
-// setTimeout(() => {document.getElementById("titles").classList.add(opacityChange);},2000);
-
 const constructordiv = (number) => {
     let creator = document.getElementById("creationList");
     for(let k=1; k<=number; k++){
@@ -89,7 +87,7 @@ const showBothTeams = () => {
         <div><img class="picFighter1" src="img/Marvel/${team1[1].name}.png" alt="luchador2"></div>
         <div><img class="picFighter1" src="img/Marvel/${team1[2].name}.png" alt="luchador3"></div>
     </div>
-    <div class="fightPanel" alt="lucha"><img class="fotoVersus" src="img/fight.png"></div>
+
     <div class="teamCharacters1">
         <div><img class="picFighter1" src="img/marvel/${team2[0].name}.png" alt="luchador4"></div>
         <div><img class="picFighter1" src="img/marvel/${team2[1].name}.png" alt="luchador5"></div>

@@ -29,41 +29,41 @@ class Fighter{
 
 // Instancio luchadores
 
-let player1 = new Fighter("antman", 30, 15, 5, 20, 15);
-let player2 = new Fighter("blackpanther", 35, 12, 8, 12, 12);
-let player3 = new Fighter("blackwidow", 25, 20, 7, 15, 18);
-let player4 = new Fighter("cable", 30, 8, 6, 18, 10);
-let player5 = new Fighter("capi", 31, 13, 14, 9, 20);
-let player6 = new Fighter("deadpool", 28, 10, 5, 20, 9);
-let player7 = new Fighter("domino", 28, 10, 5, 20, 9);
-let player8 = new Fighter("yondu", 28, 10, 5, 20, 9);
-let player9 = new Fighter("kaecilius", 28, 10, 5, 20, 9);
-let player10 = new Fighter("gamora", 28, 10, 5, 20, 9);
-let player11 = new Fighter("groot", 28, 10, 5, 20, 9);
-let player12 = new Fighter("hawkeye", 28, 10, 5, 20, 9);
-let player13 = new Fighter("heimdall", 10, 5, 20, 9);
-let player14 = new Fighter("hella", 28, 10, 5, 20, 9);
-let player15 = new Fighter("ironman", 28, 10, 5, 20, 9);
-let player16 = new Fighter("loki", 28, 10, 5, 20, 9);
-let player17 = new Fighter("marvel", 28, 10, 5, 20, 9);
-let player18 = new Fighter("megasonic", 28, 10, 5, 20, 9);
-let player19 = new Fighter("minigroot", 28, 10, 5, 20, 9);
-let player20 = new Fighter("hulk", 28, 10, 5, 20, 9);
-let player21 = new Fighter("nebula", 28, 10, 5, 20, 9);
-let player22 = new Fighter("quicksilver", 28, 10, 5, 20, 9);
-let player23 = new Fighter("rocket", 28, 10, 5, 20, 9);
-let player24 = new Fighter("scarlet", 28, 10, 5, 20, 9);
-let player25 = new Fighter("spidergwen", 28, 10, 5, 20, 9);
-let player26 = new Fighter("spiderman", 28, 10, 5, 20, 9);
-let player27 = new Fighter("starlord", 28, 10, 5, 20, 9);
-let player28 = new Fighter("strange", 28, 10, 5, 20, 9);
-let player29 = new Fighter("thanos", 28, 10, 5, 20, 9);
-let player30 = new Fighter("thor", 28, 10, 5, 20, 9);
-let player31 = new Fighter("ultron", 28, 10, 5, 20, 9);
-let player32 = new Fighter("valkyre", 28, 10, 5, 20, 9);
-let player33 = new Fighter("vision", 28, 10, 5, 20, 9);
-let player34 = new Fighter("wasp", 28, 10, 5, 20, 9);
-let player35 = new Fighter("wsoldier", 28, 10, 5, 20, 9);
+let player1 = new Fighter("Antman", 30, 15, 5, 20, 15);
+let player2 = new Fighter("Blackpanther", 35, 12, 8, 12, 12);
+let player3 = new Fighter("Blackwidow", 25, 20, 7, 15, 18);
+let player4 = new Fighter("Cable", 30, 8, 6, 18, 10);
+let player5 = new Fighter("Capi", 31, 13, 14, 9, 20);
+let player6 = new Fighter("Deadpool", 28, 10, 5, 20, 9);
+let player7 = new Fighter("Domino", 28, 10, 5, 20, 9);
+let player8 = new Fighter("Yondu", 28, 10, 5, 20, 9);
+let player9 = new Fighter("Kaecilius", 28, 10, 5, 20, 9);
+let player10 = new Fighter("Gamora", 28, 10, 5, 20, 9);
+let player11 = new Fighter("Groot", 28, 10, 5, 20, 9);
+let player12 = new Fighter("Hawkeye", 28, 10, 5, 20, 9);
+let player13 = new Fighter("Heimdall", 10, 5, 20, 9);
+let player14 = new Fighter("Hella", 28, 10, 5, 20, 9);
+let player15 = new Fighter("Ironman", 28, 10, 5, 20, 9);
+let player16 = new Fighter("Loki", 28, 10, 5, 20, 9);
+let player17 = new Fighter("Marvel", 28, 10, 5, 20, 9);
+let player18 = new Fighter("Megasonic", 28, 10, 5, 20, 9);
+let player19 = new Fighter("Minigroot", 28, 10, 5, 20, 9);
+let player20 = new Fighter("Hulk", 28, 10, 5, 20, 9);
+let player21 = new Fighter("Nebula", 28, 10, 5, 20, 9);
+let player22 = new Fighter("Quicksilver", 28, 10, 5, 20, 9);
+let player23 = new Fighter("Rocket", 28, 10, 5, 20, 9);
+let player24 = new Fighter("Scarlet", 28, 10, 5, 20, 9);
+let player25 = new Fighter("Spidergwen", 28, 10, 5, 20, 9);
+let player26 = new Fighter("Spiderman", 28, 10, 5, 20, 9);
+let player27 = new Fighter("Starlord", 28, 10, 5, 20, 9);
+let player28 = new Fighter("Strange", 28, 10, 5, 20, 9);
+let player29 = new Fighter("Thanos", 28, 10, 5, 20, 9);
+let player30 = new Fighter("Thor", 28, 10, 5, 20, 9);
+let player31 = new Fighter("Ultron", 28, 10, 5, 20, 9);
+let player32 = new Fighter("Valkyre", 28, 10, 5, 20, 9);
+let player33 = new Fighter("Vision", 28, 10, 5, 20, 9);
+let player34 = new Fighter("Wasp", 28, 10, 5, 20, 9);
+let player35 = new Fighter("Wintersoldier", 28, 10, 5, 20, 9);
 
 
 

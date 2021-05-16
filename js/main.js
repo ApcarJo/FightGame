@@ -99,6 +99,8 @@ const showBothTeams = () => {
     // Fighting Scenario with fighters
 
 const scenarioFight = (i, j) => {
+    var audio = new Audio('audio_file.mp3');
+    audio.play();
     let leftPlayer1 = document.getElementById("leftPlayer");
     leftPlayer1.src=`img/Marvel/${team1[i].name}.png`;
         
@@ -165,30 +167,23 @@ const finishFight = (i,j) => {
 
         } else if (team2[j].vida<=0) {
             winner.innerHTML = `
-            <img src="img/Marvel/${team1[i].name}.png">
+            <div><img id="finalPic" src="img/Marvel/${team1[i].name}.png"></div>
             ${team1[i].name} has WON!!`;    
             
         } else{
             winner.innerHTML = `
-            <img src="img/Marvel/${team2[j].name}.png">
+            <div><img id="finalPic" src="img/Marvel/${team2[j].name}.png"></div>
             ${team2[j].name} has WON!!`;
         }
     
         setTimeout(()=> {
             phaseChanger("phase5");
-        }, 0000);
+        }, 000);
     }
 }
 
 document.body.onkeydown = (e) =>{
     if(e.keyCode == 81){
-        // for (let a=1; a<=4; a++){
-        //     (function (a) {
-        //         setTimeout(function () {
-        //             document.getElementById("leftPlayer").src=`img/MH2_Attack/Attack${a}.png`;
-        //         }, 75*a);
-        //       })(a);
-        // }
         fighting1();
     }
 
@@ -207,24 +202,3 @@ const reset = document.getElementById('playAgain');
 reset.addEventListener('click', () => {
     window.location.reload();
 });
-
-//  setInterval(){
-//     for (let a=1; a<=4; a++){
-//         (function (a) {
-//             setTimeout(function () {
-//                 document.getElementById("attack1").src=`img/MH2_Idle/Idle${a}.png`;
-//             }, 75*a);
-//           })(a);
-//     }
-// };
-    //scenario(); Calling the function scenario.
-
-
-
-// calcular distancia entre 2 divs, usando coordenadas de cada div y restando una frente al otro, condicional x=div1pos-div2pos, if x<distanciamin && userpressHitButton, "puser1.hit(puser2)"
-
-// Añadir un contador de combate que resuelva ganador al equipo que vaya ganando cuando el tiempo llega a 0.
-
-// Arreglar lo de la barra de vida - DONE
-
-// Cambiar la estructura de los divs de las phases para que no se resetee la barra de vida cuando un jugador es derrotado. - DONE

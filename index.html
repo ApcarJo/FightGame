@@ -9,10 +9,6 @@
     <link href="css/styles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <!-- <div class="Character">
-        
-        <img class="Character_spritesheet pixelart face-down" src="/img/Run.png"  alt="Character">
-        </div> -->
 
     <!-- SECTION TO START THE GAME -->
     <section class="secvis gradient" id="phase0">
@@ -21,13 +17,12 @@
     </section>
 
     <section class="secvis gradient" id="phase1" style="display:none">
-        <divc class="startBox">
+        <div class="startBox">
             <span class="simpleText shadow_text" id="startGame" onclick="constructordiv(35)">PRESS START BUTTON</span>   
         </div>     
         
     </section>
 
-    <img src="img/Marvel/portals/giphy (1).gif">
     <!-- SECTION TO CHOOSE THE FIGHTERS OF EACH TEAM -->
 
     <section class="secvis gradient" id="phase2" style="display:none">
@@ -70,29 +65,24 @@
     <!-- SECTION WHERE BOTH TEAMS ARE PRESENTED -->
 
     <section class="secvis gradient" id="phase3" style="display:none">
-    
-        <div class="teamVsTeamScreen" id="teams"></div>
+            <div class="teamVsTeamScreen" id="teams"></div>
     </section>
     
     <section class="secvis gradient" id="phase4" style="display:none">
-
-        <div class="teamVsTeamScreen" id="lucha">
+        <div class="teamVsTeamScreen">
             <div class="teamCharacters">
-                <div class="lifeBar">
+                <div class="_lifeBar1">
                     <div class="lifeBarP1" id="fighter1Hit"></div>
                 </div>
                 <div><img class="scenarioFight" id="leftPlayer" alt="luchador1"></div>
-                <span class="simpleText" id="vidaP1"></span> 
-        
+                <span class="simpleText" id="vidaP1"></span>    
             </div>
-
             <div class="teamCharacters">
-                <div class="lifeBar">
+                <div class="_lifeBar2">
                     <div class="lifeBarP2" id="fighter2Hit"></div>
                 </div>
                 <div><img class="scenarioFight" id="rightPlayer" alt="luchador2"></div>
-                <span class="simpleText" id="vidaP2"></span>
-                
+                <span class="simpleText" id="vidaP2"></span>     
             </div>
         </div>
     </section>

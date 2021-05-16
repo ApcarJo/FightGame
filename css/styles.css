@@ -6,6 +6,10 @@
 :root {
     --pixel-size: 10;
  }
+ 
+ body{
+     all: unset;
+ }
 
 /* Section style */
 .secvis{
@@ -88,9 +92,7 @@
 }
 
 #creationList{
-
     display: grid;
-
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -129,7 +131,7 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
-    width: 34vw;
+    width: 30vw;
     overflow: hidden;
     /* background-image: radial-gradient(black, black 50%); */
     transition: 1s;
@@ -198,7 +200,7 @@
     flex-direction: column;
     transition: 0.5s;
     width: auto;
-    height: 28em;
+    height: 20em;
     /* transform:skew(-30deg) */
 }
 
@@ -235,16 +237,14 @@
 .teamVsTeamScreen{
     box-sizing: border-box;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
     flex-direction: row;
 
     height: 100vh;
-    width: 80vw;
+    width: 100vw;
     color: white;
-
-    /* background-color: green; */
 }
 
 .teams{
@@ -254,10 +254,8 @@
 
     flex-direction: row;
 
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
-
-    background-color: red;
 }
 
 .teamCharacters{
@@ -278,10 +276,18 @@
     align-items: center;
 
     flex-direction: row;
-    height: 80em;
-    width: 100vw;
+    height: 30em;
+    width: 50em;
 
-    background-color: yellow;
+}
+
+.vsText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    color: red;
+    font-size: 20em;
 }
 
 /* LIFE BAR */
@@ -289,26 +295,45 @@
     height: 5vh;
     width: 40em;
     background-color: rgb(0, 95, 149);
-    border-right: solid 0.4em black;
+    border-right: solid 0.1em black;
     transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-
+    border-radius: 0.5em;
 }
 .lifeBarP2{
     height: 5vh;
     width: 40em;
     background-color: rgb(0, 95, 149);
-    border-right: solid 0.4em black;
+    border-right: solid 0.1em black;
     transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-radius: 0.5em;
 
 }
 
-.lifeBar{
+._lifeBar1{
     display: flex;
     align-items: center;
 
     height: 5vh;
     width: 40em;
+    border-radius: 5em;
     background-color: rgb(255, 0, 0);
+
+    border-radius: 0.5em;
+    box-shadow: inset 0em 0em 0.4em 0.1em rgb(0, 0, 0), 0em 0em 0.05em 0.05em darkgrey;
+
+}
+._lifeBar2{
+    display: flex;
+    align-items: center;
+
+    height: 5vh;
+    width: 40em;
+    border-radius: 5em;
+    background-color: rgb(255, 0, 0);
+
+    border-radius: 0.5em;
+    box-shadow: inset 0em 0em 0.4em 0.1em rgb(0, 0, 0), 0em 0em 0.05em 0.05em darkgrey;
+    transform: rotate(180deg);
 
 }
 
@@ -385,7 +410,7 @@
     /* border: 0.01em solid rgb(255, 255, 255); */
  }
  .statsBox{
-    width: 50em;
+    width: 40em;
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     background-color: rgb(42, 42, 42);
     border-radius: 0.5em;

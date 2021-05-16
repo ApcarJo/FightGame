@@ -46,7 +46,7 @@ const chooseFighter = (fighter) => {
                 setTimeout(()=> {
                     phaseChanger("phase4");
                     scenarioFight(i,j);
-                }, 2000);
+                }, 4000);
             }
         }
         document.getElementById(fighter).onclick = "";
@@ -87,11 +87,11 @@ const showBothTeams = () => {
         <div><img class="picFighter1" src="img/Marvel/${team1[1].name}.png" alt="luchador2"></div>
         <div><img class="picFighter1" src="img/Marvel/${team1[2].name}.png" alt="luchador3"></div>
     </div>
-
+    <div class="vsImg"><span class="vsText">VS</span></div>
     <div class="teamCharacters1">
-        <div><img class="picFighter1" src="img/marvel/${team2[0].name}.png" alt="luchador4"></div>
-        <div><img class="picFighter1" src="img/marvel/${team2[1].name}.png" alt="luchador5"></div>
-        <div><img class="picFighter1" src="img/marvel/${team2[2].name}.png" alt="luchador6"></div>
+        <div><img class="picFighter1" src="img/Marvel/${team2[0].name}.png" alt="luchador4"></div>
+        <div><img class="picFighter1" src="img/Marvel/${team2[1].name}.png" alt="luchador5"></div>
+        <div><img class="picFighter1" src="img/Marvel/${team2[2].name}.png" alt="luchador6"></div>
     </div>`;
     
 };

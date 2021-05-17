@@ -462,16 +462,16 @@
 
   #phase4{
       background-image: url(https://i.redd.it/5261b4tuxky21.jpg);
-      background-size: 200vh;
+      background-size: 100%;
   }
 
   #phase3{
     background-image: url(https://i.pinimg.com/originals/e6/6a/8a/e66a8aa6e1edd8b5df5cfc4a354892bb.jpg);
-    background-size: 200vh;
+    background-size: 100%;
   }
 
   #phase2{
     background-image: url(https://i.pinimg.com/originals/82/35/e0/8235e0cbe977081f095929067d7008bf.jpg);
-    background-size: 200vh;
+    background-size: 100%;
 
   }

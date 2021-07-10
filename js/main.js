@@ -10,7 +10,7 @@ const constructordiv = (number) => {
     for(let k=1; k<=number; k++){
 
         creator.innerHTML += `
-        <div class="avatar" id="${k}" onclick="chooseFighter(${k})" onmouseover="preview(${k})" onmouseout="outPreview()"><div class="picBox"><img class="picFighter" src="img/Marvel/${allPlayers[k].name}.png"></div></div>`;
+        <div class="avatar" id="${k}" onclick="chooseFighter(${k})" onmouseover="preview(${k})" onmouseout="outPreview()"><div class="picBox"><img class="picFighter" src="../img/Marvel/${allPlayers[k].name}.png"></div></div>`;
         console.log(allPlayers[k].name);
         console.log(creator.id);
     }
@@ -57,7 +57,7 @@ const chooseFighter = (fighter) => {
 
 const preview = (a) => {
     let prevL = document.getElementById("previewLeft");
-    prevL.innerHTML = `<div><img class="photoSize" src="img/Marvel/${allPlayers[a].name}.png" alt="previewL"></div>`;
+    prevL.innerHTML = `<div><img class="photoSize" src="../img/Marvel/${allPlayers[a].name}.png" alt="previewL"></div>`;
     let str = allPlayers[a];
    
     document.getElementById("nameStats").innerHTML = `<div><span>${str.name}</span></div>`;
@@ -85,15 +85,15 @@ const showBothTeams = () => {
     let teams = document.getElementById("teams");
     teams.innerHTML = `
     <div class="teamCharacters1">
-        <div><img class="picFighter1" src="img/Marvel/${team1[0].name}.png" alt="luchador1"></div>
-        <div><img class="picFighter1" src="img/Marvel/${team1[1].name}.png" alt="luchador2"></div>
-        <div><img class="picFighter1" src="img/Marvel/${team1[2].name}.png" alt="luchador3"></div>
+        <div><img class="picFighter1" src="../img/Marvel/${team1[0].name}.png" alt="luchador1"></div>
+        <div><img class="picFighter1" src="../img/Marvel/${team1[1].name}.png" alt="luchador2"></div>
+        <div><img class="picFighter1" src="../img/Marvel/${team1[2].name}.png" alt="luchador3"></div>
     </div>
     <div class="vsImg"><span class="vsText">VS</span></div>
     <div class="teamCharacters1">
-        <div><img class="picFighter1" src="img/Marvel/${team2[0].name}.png" alt="luchador4"></div>
-        <div><img class="picFighter1" src="img/Marvel/${team2[1].name}.png" alt="luchador5"></div>
-        <div><img class="picFighter1" src="img/Marvel/${team2[2].name}.png" alt="luchador6"></div>
+        <div><img class="picFighter1" src="../img/Marvel/${team2[0].name}.png" alt="luchador4"></div>
+        <div><img class="picFighter1" src="../img/Marvel/${team2[1].name}.png" alt="luchador5"></div>
+        <div><img class="picFighter1" src="../img/Marvel/${team2[2].name}.png" alt="luchador6"></div>
     </div>`;
     
 };
@@ -104,14 +104,14 @@ const scenarioFight = (i, j) => {
     var audio = new Audio('audio_file.mp3');
     audio.play();
     let leftPlayer1 = document.getElementById("leftPlayer");
-    leftPlayer1.src=`img/Marvel/${team1[i].name}.png`;
+    leftPlayer1.src=`../img/Marvel/${team1[i].name}.png`;
         
     let lifeP1 = document.getElementById("vidaP1");
     lifeP1.innerHTML = `${team1[i].name} : ${team1[i].vida}`;
 
 
     let rightPlayer1 = document.getElementById("rightPlayer");
-    rightPlayer1.src=`img/Marvel/${team2[j].name}.png`;
+    rightPlayer1.src=`../img/Marvel/${team2[j].name}.png`;
     let lifeP2 = document.getElementById("vidaP2");
     lifeP2.innerHTML = `${team2[j].name} : ${team2[j].vida}`;
 };
@@ -169,12 +169,12 @@ const finishFight = (i,j) => {
 
         } else if (team2[j].vida<=0) {
             winner.innerHTML = `
-            <div><img id="finalPic" src="img/Marvel/${team1[i].name}.png"></div>
+            <div><img id="finalPic" src="../img/Marvel/${team1[i].name}.png"></div>
             ${team1[i].name} has WON!!`;    
             
         } else{
             winner.innerHTML = `
-            <div><img id="finalPic" src="img/Marvel/${team2[j].name}.png"></div>
+            <div><img id="finalPic" src="../img/Marvel/${team2[j].name}.png"></div>
             ${team2[j].name} has WON!!`;
         }
     

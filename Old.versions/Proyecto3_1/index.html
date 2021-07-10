@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="backgroundDiv gradientBackground" id="phase1">
+        <span class="gameIntro">Welcome to Game Of Skills</span>
+        <span class="Start" onclick="phaseChange('fightersScreen')">Start</span>
+    </div>
+
+
+        <div id="fightersScreen" class="screen" style="display:none">
+            <div class="fighters">
+                <div class="avatar" id="1" onclick="chooseFighter(1)"><img class="picFighter" src="img/Neo.jfif"></div>
+                <div class="avatar" id="2" onclick="chooseFighter(2)"><img class="picFighter" src="img/Axel.jfif"></div>
+                <div class="avatar" id="3" onclick="chooseFighter(3)"><img class="picFighter" src="img/Donatello.jfif"></div>
+                <div class="avatar" id="4" onclick="chooseFighter(4)"><img class="picFighter" src="img/Goku.jfif"></div>
+                <div class="avatar" id="5" onclick="chooseFighter(5)"><img class="picFighter" src="img/Chuck Norris.jfif"></div>
+                <div class="avatar" id="6" onclick="chooseFighter(6)"><img class="picFighter" src="img/Pikachu.jfif"></div>
+            </div>
+        </div>
+
+
+    <script src="/js/movement.js"></script>
+    <script src="/js/fighters.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- <canvas id="snakeboard" width="400" height="400"></canvas> -->
+</body>
+
+</body>
+</html>

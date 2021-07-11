@@ -110,18 +110,6 @@ let allPlayers = {
 
 }
 
-
-// let t=1;
-// do{
-//     console.log(allPlayers[1]);
-//     allPlayers[t].agility = getRandom(8, 12);
-//     allPlayers[t].strength = getRandom(20, 25);
-//     allPlayers[t].skill = getRandom(12, 20);
-//     allPlayers[t].defense = getRandom(10, 15);
-//     t++; 
-//     console.log(allPlayers[1]);
-// } while (t<=36)
-
 let t=1;
 do{
         allPlayers[t].agility = getRandom(8, 12);

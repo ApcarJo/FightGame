@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,21 @@
 
     <link href="css/styles.css" type="text/css" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- SECTION TO START THE GAME -->
     <section class="secvis gradient" id="phase0">
         <span class="titles" onmouseover="phaseChanger('phase1')">Game made by José Luis Aparicio</span>
 
-        
+
     </section>
 
     <section class="secvis gradient" id="phase1" style="display:none">
         <div class="startBox">
-            <span class="simpleText shadow_text" id="startGame" onclick="constructordiv(35)">PRESS START BUTTON</span>   
-        </div>     
-        
+            <span class="simpleText shadow_text" id="startGame" onclick="constructordiv(35)">PRESS START BUTTON</span>
+        </div>
+
     </section>
 
     <!-- SECTION TO CHOOSE THE FIGHTERS OF EACH TEAM -->
@@ -53,25 +55,21 @@
             </div>
 
             <div class="bigFighter" id="previewLeft"></div>
-
             <div class="bigFighter" id="previewCenter">
-                <!-- <span class="simpleText"></span> -->
-                <div class="fightersSelectionScreen" id="creationList">
-                <!-- Y AQUÍ LLEGA LA MAGIA DESDE MAIN.JS Y LA FUNCIÓN CONSTRUCTORDIV -->
-                </div>
+                <div class="fightersSelectionScreen" id="creationList"></div>
             </div>
         </div>
 
     </section>
-    
+
     <!-- SECTION WHERE BOTH TEAMS ARE PRESENTED -->
 
     <section class="secvis gradient" id="phase3" style="display:none">
-            <div class="teamVsTeamScreen" id="teams"></div>
+        <div class="teamVsTeamScreen" id="teams"></div>
     </section>
 
     <!-- SECTION WHERE THE PLAYERS FIGHT -->
-    
+
     <section class="secvis gradient" id="phase4" style="display:none">
         <div class="teamVsTeamScreen">
             <div class="teamCharacters">
@@ -80,7 +78,7 @@
                     <div class="lifeBarP1" id="fighter1Hit"></div>
                 </div>
                 <div><img class="scenarioFight" id="leftPlayer" alt="luchador1"></div>
-                <span class="simpleText" id="vidaP1"></span>    
+                <span class="simpleText" id="vidaP1"></span>
             </div>
             <div class="teamCharacters">
                 <span class="simpleText" Press P to hit player 1></span>
@@ -88,22 +86,21 @@
                     <div class="lifeBarP2" id="fighter2Hit"></div>
                 </div>
                 <div><img class="scenarioFight" id="rightPlayer" alt="luchador2"></div>
-                <span class="simpleText" id="vidaP2"></span>     
+                <span class="simpleText" id="vidaP2"></span>
             </div>
         </div>
     </section>
 
     <section class="secvis gradient" id="phase5" style="display:none">
-        <!-- <span class="simpleText">ESTOY EN LA phase 5!!!</span> -->
-        
-        <div class="winnerDiv">    
+        <div class="winnerDiv">
             <div class="winnerScreen simpleText" id="winner"></div>
-                <span class="simpleText" id="playAgain">Do you want to play again?</span>
-            </div>
+            <span class="simpleText" id="playAgain">Do you want to play again?</span>
+        </div>
         </div>
     </section>
 
     <script src="js/fighters.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

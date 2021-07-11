@@ -65,16 +65,10 @@ const preview = (a) => {
     document.getElementById("Agi").style.width = `${str.agility/12*100}%`;
     document.getElementById("Skl").style.width = `${str.skill/20*100}%`;
     document.getElementById("Spd").style.width = `${str.speed/10*100}%`;
-
-    // let prevR = document.getElementById("previewRight");
-    // prevR.innerHTML = `<div><span>${str.name}<br>Attack ${str.strength}<br>Defense ${str.defense}<br>Skill ${str.skill}<br>Agility ${str.agility}</span></div>`;
-    // prevR.style.backgroundImage = `radial-gradient(transparent, black 50%)`;
-    // console.log(allPlayers[a]);
 };
 
 const outPreview = () => {
     let prevR = document.getElementById("previewRight");
-    // prevR.innerHTML = "";
     prevR.style.backgroundImage = ``;
 }
 

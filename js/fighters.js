@@ -124,12 +124,10 @@ let allPlayers = {
 
 let t=1;
 do{
-        console.log(allPlayers[t]);
         allPlayers[t].agility = getRandom(8, 12);
         allPlayers[t].strength = getRandom(20, 25);
         allPlayers[t].skill = getRandom(12, 20);
         allPlayers[t].defense = getRandom(10, 15);
         allPlayers[t].speed = getRandom(6, 10);
-        console.log(allPlayers[t]);
         t++;
 } while (t<=35)

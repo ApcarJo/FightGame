@@ -1,8 +1,4 @@
 
-
-
-    
-
 class Fighter{
 
     constructor(name, strength, defense, skill, agility, speed){

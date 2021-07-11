@@ -10,7 +10,7 @@ const constructordiv = (number) => {
     for(let k=1; k<=number; k++){
 
         creator.innerHTML += `
-        <div class="avatar" id="${k}" onclick="chooseFighter(${k})" onmouseover="preview(${k})" onmouseout="outPreview()"><div class="picBox"><img class="picFighter" src="./img/Marvel/${allPlayers[k].name}.png"></div></div>`;
+        <div class="avatar" id="${k}" onclick="chooseFighter(${k})" onmouseover="preview(${k})" onmouseout="outPreview()"><div class="picBox"><img class="picFighter" src="img/Marvel/${allPlayers[k].name}.png"></div></div>`;
     }
     phaseChanger('phase2')
 }
